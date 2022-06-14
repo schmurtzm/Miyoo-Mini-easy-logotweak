@@ -13,7 +13,7 @@ It is presented as an app in Miyoo Mini menu.
 
 An excellent tutorial video made by RetroBreeze:
 
-[![An excellent tutorial video made by RetroBreeze](https://img.youtube.com/vi/_GWbgp1Nw3s/0.jpg)](https://www.youtube.com/watch?v=SPa9SMyPU58])
+[![An excellent tutorial video made by RetroBreeze](https://img.youtube.com/vi/_GWbgp1Nw3s/0.jpg)](https://youtu.be/_GWbgp1Nw3s])
 
 Logo included :
 
