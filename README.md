@@ -1,32 +1,46 @@
-# Miyoo Mini - easy logotweak by Schmurtz
+# Miyoo Mini - Easy Logotweak  By Schmurtz
  An app for easy boot logo flashing on the Miyoo Mini
 
-
+```
 !! **                                    Use it at your own risk :                                    ** !!
 !! ** logotweak write in the nand of the Miyoo Mini. A bad flash will cause your miyoo Mini to brick. ** !!
 !! **      Check your battery level (don't use it with low battery level) and use a good SD card.     ** !!
+```
+Easy Logotweak uses the flash app "Boot logo changer" created by Eggs and described in [the Wiki of Onion](https://github.com/jimgraygit/Onion/wiki/6.-Miyoo-mini-apps#boot-logo-changer-credit-eggs).
 
-
-This is a script which allows to backup your current boot logo, to choose a new one and to flash it in an easy way.
+Easy Logotweak is a based on a linux shell script which allows to backup your current boot logo, to choose a new one and to flash it in an easy way.
 It is presented as an app in Miyoo Mini menu.
+
+An excellent tutorial video made by RetroBreeze:
+
+[![An excellent tutorial video made by RetroBreeze](https://img.youtube.com/vi/_GWbgp1Nw3s/0.jpg)](https://www.youtube.com/watch?v=SPa9SMyPU58])
+
+Logo included :
+
+<img src="https://user-images.githubusercontent.com/7110113/173691818-00164a7a-e6e3-4152-b9b1-6e392562a1e0.png" width="200" height="200">
+
+
 
 
 To use with Onion-OS :
+```
 	1 - copy logotweak folder in your app folder.
 	2 - Run the app logotweak, and choose your logo during the slideshow. That' all : power off -> power on to see the result ;)
-
+```
 To use with MiniUI :
+```
 	1 - rename the folder to logotweak.pak
 	2 - Put it in the Tools folder.
 	3 - Run the app logotweak, and choose your logo during the slideshow. That' all : power off -> power on to see the result ;)
-
+```
 After that you will find a backup called backup_xxxxxxxx which contains a backup of your previous logo.
 
 To add your own logo in the collection : 
+```
 	- create a new folder in app\logotweak\logos
 	- Put your images files inside this new folder (image1.jpg is required,image2.jpg and image3.jpg are optional) 
 	- Then you can run logotweak to see the result ;)
-
+```
 
 
 If you want more technical details read documentation below.
@@ -52,7 +66,7 @@ If you want more technical details read documentation below.
 
 miyoomini logo tweaking tools (original documentation - manual steps) :
 ***********************************************************************
-
+```
 ** Mishandling will cause your miyoomini to brick. Use with extreme caution and at your own risk **
 
 logoread	Extract logo images from current NAND
@@ -62,15 +76,18 @@ logoread	Extract logo images from current NAND
 		- All images are rotated 180 degrees
 
 logomake	Make logo.img from image1,2,3.jpg
-		- logo.img size is fixed to 128KB, so the total size of 3 jpg files should be less than 128KB (129,732 bytes max actually)
+		- logo.img size is fixed to 128KB, so the total size of 3 jpg files 
+		should be less than 128KB (129,732 bytes max actually)
 
 logowrite	Flush logo.img to NAND
 		* miyoomini will brick if image is corrupted. Be very careful *
 
-To change the image, first extract the current images with logoread, modify the image, create logo.img with logomake, and then flush with logowrite.
+To change the image, first extract the current images with logoread, modify the image, create logo.img with logomake, 
+and then flush with logowrite.
 
-( if the firmware is old (202111201656 or 202112110956), there is no super upgrade screen. in this case, logoread will fail to extract the 3rd image, so prepare a dummy image3.jpg after logoread )
-
+( if the firmware is old (202111201656 or 202112110956), there is no super upgrade screen. in this case, 
+logoread will fail to extract the 3rd image, so prepare a dummy image3.jpg after logoread )
+```
 
 
 =======================================================================
@@ -79,11 +96,9 @@ This section describe all the step necessary before the use of Easy Logotweak.
 
 It can be usefull to understand all the steps of a custom boot logo flash.
 
+------------------------------------------------
 <details>
-  <summary>Reddit Full Tutorial by GumbyXGames: </summary>
-  
-  Spoiler text. Note that it's important to have a space after the summary tag. You should be able to write any markdown you want inside the `<details>` tag... just make sure you close `<details>` afterward.
-  
+  <summary>Reddit Full Tutorial by GumbyXGames, Click here to read </summary>
 
 
 https://www.reddit.com/r/MiyooMini/comments/v6e1f1/custom_boot_screen_tutorial/
@@ -144,7 +159,8 @@ https://www.reddit.com/r/MiyooMini/comments/v6e1f1/custom_boot_screen_tutorial/
 26.You have now flashed the new boot, upgrade, and super upgrade images to your device.
 
 </details>
-
+------------------------------------------------
+=======================================================================
 
 
 
