@@ -1,0 +1,1 @@
+This script is used to convert jpg to png, as logotweaker is now able to open jpg directly, it is not necessary anymore.
