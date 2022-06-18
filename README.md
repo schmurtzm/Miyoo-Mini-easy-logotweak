@@ -17,7 +17,7 @@ An excellent tutorial video made by RetroBreeze:
 
 Logo included :
 
-<img src="https://user-images.githubusercontent.com/7110113/174418913-c43e27ee-e1ec-4355-94e1-8269315d476b.png" width="200" height="200">
+<img src="https://user-images.githubusercontent.com/7110113/174418913-c43e27ee-e1ec-4355-94e1-8269315d476b.png" width="200" height="300">
 
 
 
