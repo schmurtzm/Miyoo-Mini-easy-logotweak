@@ -15,9 +15,9 @@ It is presented as an app in Miyoo Mini menu.
 * [Videos tutorials](#Videos-tutorials)
 * [Community logos's included](#Community-logos's-included)
 * [Installation](#Installation)
-	* [Onion-OS](#To-use-with-Onion-OS-:)
-	* [MiniUI](#To-use-with-MiniUI-:)
-* [Add your own logo in the collection](#Add-your-own-logo-in-the-collection-:)
+	* [Onion-OS](#To-use-with-Onion-OS)
+	* [MiniUI](#To-use-with-MiniUI)
+* [Add your own logo in the collection](#Add-your-own-logo-in-the-collection)
 * [Release Notes](#Release-Notes)
 * [Detailed documentation](#Detailed-documentation)
 * [Thanks](#Thanks)
@@ -48,12 +48,12 @@ Another excellent tutorial video about Easy LogoTweak  made by Retro Game Corps 
 
 ## Installation
 
- #### To use with Onion-OS :
+ #### To use with Onion-OS
 ```
 	1 - copy logotweak folder in your app folder.
 	2 - Run the app logotweak, and choose your logo during the slideshow. That' all : power off -> power on to see the result ;)
 ```
- #### To use with MiniUI :
+ #### To use with MiniUI
 ```
 	1 - rename the folder to logotweak.pak
 	2 - Put it in the Tools folder.
@@ -61,7 +61,7 @@ Another excellent tutorial video about Easy LogoTweak  made by Retro Game Corps 
 ```
 After that you will find a backup called backup_xxxxxxxx which contains a backup of your previous logo.
 
-## Add your own logo in the collection :
+## Add your own logo in the collection
 ```
 	- create a new folder in app\logotweak\logos
 	- Put your images files rotated 180 degrees inside this new folder (image1.jpg is required,image2.jpg and image3.jpg are optional) 
