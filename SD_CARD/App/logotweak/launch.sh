@@ -1,11 +1,12 @@
 #!/bin/sh
-# logotweak v1.1
+# Easy LogoTweak v1.1
 #	Initial Release
-# logotweak v1.1
+# Easy LogoTweak v1.1
 #	Logos are now dynamically generated with logomake
-# logotweak v1.2
+# Easy LogoTweak v1.2
 #	Logos preview doesn't require to generate a png anymore (image1.jpg is used to generate preview, Thanks Eggs).
 #	image2.jpg and image3.jpg (logos for FW update) are now optional, by default the one from "Original" folder are used.
+# Easy LogoTweak v1.3
 
 # Flash Application Credit: Eggs
 # Script Logo Selector Credit: Schmurtz
@@ -23,7 +24,10 @@ for d in ./logos/* ; do
 	#./UI/show $d/confirm.png
 	if [ -f "$d/image1.jpg" ]; then
 		#./UI/show "$d/preview.png" # == old way==
-		LD_LIBRARY_PATH=$progdir/UI:$LD_LIBRARY_PATH ./UI/jpgr "$d/image1.jpg"
+		#LD_LIBRARY_PATH=$progdir/UI:$LD_LIBRARY_PATH ./UI/jpgr "$d/image1.jpg"   # == SDL problem on MiniUI with this command line
+		
+		# this specific path force to use stock SDL on MiniUI :
+		LD_LIBRARY_PATH=$progdir/UI:/customer/lib:/config/lib:/lib ./UI/jpgr "$d/image1.jpg"
 	else
 		./UI/say "image1.jpg is missing of this folder..."
 		#./UI/say "preview.png is missing"$'\n'"Run tools\Create_Previews.bat" # == old way==

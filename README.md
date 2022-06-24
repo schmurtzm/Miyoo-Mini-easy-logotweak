@@ -11,23 +11,49 @@ Easy Logotweak uses the flash app "Boot logo changer" created by Eggs and descri
 Easy Logotweak is a based on a linux shell script which allows to backup your current boot logo, to choose a new one and to flash it in an easy way.
 It is presented as an app in Miyoo Mini menu.
 
-An excellent tutorial video made by RetroBreeze:
+**Contents:**
+* [Videos tutorials](#Videos-tutorials)
+* [Community logos's included](#Community-logos's-included)
+* [Installation](#Installation)
+	* [Onion-OS](#To-use-with-Onion-OS-:)
+	* [MiniUI](#To-use-with-MiniUI-:)
+* [Add your own logo in the collection](#Add-your-own-logo-in-the-collection-:)
+* [Release Notes](#Release-Notes)
+* [Detailed documentation](#Detailed-documentation)
+* [Thanks](#Thanks)
+
+
+------------------------------------------------
+## Videos tutorials
+
+An excellent tutorial video about Easy LogoTweak made by RetroBreeze (click on the picture to view it) :
 
 [![An excellent tutorial video made by RetroBreeze](https://img.youtube.com/vi/_GWbgp1Nw3s/0.jpg)](https://youtu.be/_GWbgp1Nw3s])
 
-Logo included :
+------------------------------------------------
+
+Another excellent tutorial video about Easy LogoTweak  made by Retro Game Corps (click on the picture to view it) :
+
+(great instructions about how to download from github, the problem on MiniUI mentioned in this video has been solved in version 1.3)
+
+[![Another excellent tutorial video made by Retro Game Corps](https://img.youtube.com/vi/fMhtj9VQRSk/0.jpg)](https://youtu.be/fMhtj9VQRSk])
+
+
+
+------------------------------------------------
+ ## Community logos's included :
 
 <img src="https://user-images.githubusercontent.com/7110113/174418913-c43e27ee-e1ec-4355-94e1-8269315d476b.png" width="200" height="300">
 
 
+## Installation
 
-
-To use with Onion-OS :
+ #### To use with Onion-OS :
 ```
 	1 - copy logotweak folder in your app folder.
 	2 - Run the app logotweak, and choose your logo during the slideshow. That' all : power off -> power on to see the result ;)
 ```
-To use with MiniUI :
+ #### To use with MiniUI :
 ```
 	1 - rename the folder to logotweak.pak
 	2 - Put it in the Tools folder.
@@ -35,18 +61,19 @@ To use with MiniUI :
 ```
 After that you will find a backup called backup_xxxxxxxx which contains a backup of your previous logo.
 
-To add your own logo in the collection : 
+## Add your own logo in the collection :
 ```
 	- create a new folder in app\logotweak\logos
-	- Put your images files inside this new folder (image1.jpg is required,image2.jpg and image3.jpg are optional) 
+	- Put your images files rotated 180 degrees inside this new folder (image1.jpg is required,image2.jpg and image3.jpg are optional) 
 	- Then you can run logotweak to see the result ;)
+	
+More technical details about logo creation in the detailed documentation below. 
 ```
 
 
-If you want more technical details read documentation below.
 
 
-
+ ## Release Notes
 ```
 /*  Release Notes (yyyy/mm/dd):                                                             */
 /*  v1.0 - 2022/06/10 :                                                                     */
@@ -61,11 +88,16 @@ If you want more technical details read documentation below.
 /*    - image2.jpg and image3.jpg (logos for FW update) are now optional,                   */
 /*      by default the one from "Original" folder are used.                                 */
 /*    - and two new logos from the community 😉.                                            */
+/*  v1.3 - 2022/06/24 :                                                                     */
+/*    - Solve display preview problems on MiniUI                                            */
 ```
 
+ ## Detailed documentation
+------------------------------------------------
+#### MiyooMini logo tweaking tools (original documentation - manual steps)
+<details>
+  <summary>Click here to expand </summary>
 
-miyoomini logo tweaking tools (original documentation - manual steps) :
-***********************************************************************
 ```
 ** Mishandling will cause your miyoomini to brick. Use with extreme caution and at your own risk **
 
@@ -88,17 +120,17 @@ and then flush with logowrite.
 ( if the firmware is old (202111201656 or 202112110956), there is no super upgrade screen. in this case, 
 logoread will fail to extract the 3rd image, so prepare a dummy image3.jpg after logoread )
 ```
+</details>
 
-
-=======================================================================
-
-This section describe all the step necessary before the use of Easy Logotweak.
-
-It can be usefull to understand all the steps of a custom boot logo flash.
 
 ------------------------------------------------
+
+#### Reddit Full Tutorial by GumbyXGames
+This section describe all the steps necessary before the creation of Easy Logotweak.
+
+It can be usefull to understand all the steps of a custom boot logo flash.
 <details>
-  <summary>Reddit Full Tutorial by GumbyXGames, Click here to read </summary>
+  <summary>Click here to expand </summary>
 
 
 https://www.reddit.com/r/MiyooMini/comments/v6e1f1/custom_boot_screen_tutorial/
@@ -159,8 +191,11 @@ https://www.reddit.com/r/MiyooMini/comments/v6e1f1/custom_boot_screen_tutorial/
 26.You have now flashed the new boot, upgrade, and super upgrade images to your device.
 
 </details>
+
+
+
+
 ------------------------------------------------
-=======================================================================
 
 
 
