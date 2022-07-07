@@ -43,7 +43,8 @@ Another excellent tutorial video about Easy LogoTweak  made by Retro Game Corps 
 ------------------------------------------------
  ## Community logos's included :
 
-<img src="https://user-images.githubusercontent.com/7110113/174418913-c43e27ee-e1ec-4355-94e1-8269315d476b.png" width="200" height="300">
+<img src="https://user-images.githubusercontent.com/7110113/177884221-ccc855f5-471f-41e8-a84c-d98e81a0e27b.png" width="200" height="300">
+
 
 
 ## Installation
@@ -59,7 +60,7 @@ Another excellent tutorial video about Easy LogoTweak  made by Retro Game Corps 
 	2 - Put it in the Tools folder.
 	3 - Run the app logotweak, and choose your logo during the slideshow. That' all : power off -> power on to see the result ;)
 ```
-After that you will find a backup called backup_xxxxxxxx which contains a backup of your previous logo.
+~~After that you will find a backup called backup_xxxxxxxx which contains a backup of your previous logo.~~ (disabled: it was not useful)
 
 ## Add your own logo in the collection
 ```
@@ -87,9 +88,18 @@ More technical details about logo creation in the detailed documentation below.
 /*      (image1.jpg is used to display the preview directly, Thanks to eggs).               */
 /*    - image2.jpg and image3.jpg (logos for FW update) are now optional,                   */
 /*      by default the one from "Original" folder are used.                                 */
-/*    - and two new logos from the community 😉.                                            */
+/*    - and two new logos from the community !                                              */
 /*  v1.3 - 2022/06/24 :                                                                     */
 /*    - Solve display preview problems on MiniUI                                            */
+/*  v2.0 - 2022/07/07 :                                                                     */
+/*    - Can now navigate between logos with left/right keys                                 */
+/*    - Press select to see logo in fullscreen without instructions                         */
+/*    - Press menu to exit application                                                      */
+/*    - Resolve a problem when displaying instructions on Onion-OS                          */
+/*    - Indicates total of logos and current logo number                                    */
+/*    - Add a confirmation before flashing                                                  */
+/*    - Doesn't backup anymore the current logo (useless most of the time)                  */
+/*    - and new logos from the community !                                                  */
 ```
 
  ## Detailed documentation
