@@ -1,0 +1,9 @@
+This only works on Onion OS (may work with MiniUi, but I can't confirm personally). 
+Copy all 6 of the png images and past them into the .tmp folder. You will overwrite the old charging logos, and they will be replaced with this one. When plugged in, it should run automatically.
+
+Thanks for trying out my charge screen and boot logos. 
+Send me a picture on 
+reddit u/s7121n9s
+Instagram @PaynefullyCreated
+facebook @Eric Payne (Beanie)
+And let me know how you like them!

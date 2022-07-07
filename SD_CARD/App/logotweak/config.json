@@ -1,6 +1,6 @@
 {
-"label":"logotweak V1.0",
+"label":"logotweak V2.0",
 "icon":"logotweak.png",
 "launch":"launch.sh",
-"description":"Backup and flash boot logo"
+"description":"Flash boot logo"
 }
