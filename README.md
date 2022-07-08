@@ -8,8 +8,10 @@
 ```
 Easy Logotweak uses the flash app "Boot logo changer" created by Eggs and described in [the Wiki of Onion](https://github.com/jimgraygit/Onion/wiki/6.-Miyoo-mini-apps#boot-logo-changer-credit-eggs).
 
-Easy Logotweak is a based on a linux shell script which allows to backup your current boot logo, to choose a new one and to flash it in an easy way.
+Easy Logotweak is a based on a linux shell script which allows to choose a logo and to flash it in an easy way.
 It is presented as an app in Miyoo Mini menu.
+
+If you don't know how to download sources from github, take a look to this tutorial video about Easy LogoTweak made by Retro Game Corps : https://youtu.be/fMhtj9VQRSk?t=111
 
 **Contents:**
 * [Videos tutorials](#Videos-tutorials)
