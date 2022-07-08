@@ -11,20 +11,57 @@ Easy Logotweak uses the flash app "Boot logo changer" created by Eggs and descri
 Easy Logotweak is a based on a linux shell script which allows to choose a logo and to flash it in an easy way.
 It is presented as an app in Miyoo Mini menu.
 
-If you don't know how to download sources from github, take a look to this tutorial video about Easy LogoTweak made by Retro Game Corps : https://youtu.be/fMhtj9VQRSk?t=111
+the community has made some excellent tutorial videos, I invite you to have a look at them, they are presented below.
 
+
+------------------------------------------------
 **Contents:**
-* [Videos tutorials](#Videos-tutorials)
-* [Community logos's included](#Community-logos's-included)
+* [Download](#Download)
 * [Installation](#Installation)
 	* [Onion-OS](#To-use-with-Onion-OS)
 	* [MiniUI](#To-use-with-MiniUI)
+* [Videos tutorials](#Videos-tutorials)
+* [Community logos's included](#Community-logos's-included)
 * [Add your own logo in the collection](#Add-your-own-logo-in-the-collection)
 * [Release Notes](#Release-Notes)
 * [Detailed documentation](#Detailed-documentation)
 * [Thanks](#Thanks)
 
+------------------------------------------------
+## Download
 
+[Download here](https://github.com/schmurtzm/Miyoo-Mini-easy-logotweak/archive/refs/heads/main.zip)
+
+The "normal" way to download sources on Github :
+
+<img src="https://user-images.githubusercontent.com/7110113/177954376-4b36be7a-eb07-4cca-8fa6-7866e5bdece1.png" width="300" height="200">
+
+More details in the video about Easy LogoTweak made by Retro Game Corps : https://youtu.be/fMhtj9VQRSk?t=111
+
+------------------------------------------------
+## Installation
+
+ #### To use with Onion-OS
+```
+	1 - Open the downloaded archive and copy "logotweak" folder in your "App" folder.
+	2 - Run the app logotweak, and choose your logo. That' all : power off -> power on to see the result ;)
+```
+ #### To use with MiniUI
+```
+	1 - Open the downloaded archive and copy "logotweak" folder in "Tools" folder of your SD card
+	2 - Rename the folder "logotweak" to "logotweak.pak"
+	3 - Run the app logotweak, and choose your logo, that' all : power off -> power on to see the result ;)
+```
+~~After that you will find a backup called backup_xxxxxxxx which contains a backup of your previous logo.~~ (disabled: it was not useful)
+
+## Add your own logo in the collection
+```
+	- create a new folder in app\logotweak\logos
+	- Put your images files rotated 180 degrees inside this new folder (image1.jpg is required,image2.jpg and image3.jpg are optional) 
+	- Then you can run logotweak to see the result ;)
+	
+More technical details about logo creation in the detailed documentation below. 
+```
 ------------------------------------------------
 ## Videos tutorials
 
@@ -41,36 +78,12 @@ Another excellent tutorial video about Easy LogoTweak  made by Retro Game Corps 
 [![Another excellent tutorial video made by Retro Game Corps](https://img.youtube.com/vi/fMhtj9VQRSk/0.jpg)](https://youtu.be/fMhtj9VQRSk])
 
 
-
 ------------------------------------------------
  ## Community logos's included :
 
 <img src="https://user-images.githubusercontent.com/7110113/177894062-f1659a3b-9795-4374-b43c-6528800749e1.png" width="200" height="300">
 
 
-## Installation
-
- #### To use with Onion-OS
-```
-	1 - copy logotweak folder in your app folder.
-	2 - Run the app logotweak, and choose your logo during the slideshow. That' all : power off -> power on to see the result ;)
-```
- #### To use with MiniUI
-```
-	1 - rename the folder to logotweak.pak
-	2 - Put it in the Tools folder.
-	3 - Run the app logotweak, and choose your logo during the slideshow. That' all : power off -> power on to see the result ;)
-```
-~~After that you will find a backup called backup_xxxxxxxx which contains a backup of your previous logo.~~ (disabled: it was not useful)
-
-## Add your own logo in the collection
-```
-	- create a new folder in app\logotweak\logos
-	- Put your images files rotated 180 degrees inside this new folder (image1.jpg is required,image2.jpg and image3.jpg are optional) 
-	- Then you can run logotweak to see the result ;)
-	
-More technical details about logo creation in the detailed documentation below. 
-```
 
 
 
