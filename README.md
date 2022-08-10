@@ -81,7 +81,7 @@ Another excellent tutorial video about Easy LogoTweak  made by Retro Game Corps 
 ------------------------------------------------
  ## Community logos's included :
 
-<img src="https://user-images.githubusercontent.com/7110113/183784303-4e468a38-61ee-43f2-ab43-0f647e6cd9b4.png" width="200" height="300">
+<img src="https://user-images.githubusercontent.com/7110113/183974023-98ee187e-5841-4959-990c-27a805be8e97.png" width="200" height="300">
 
 
 
