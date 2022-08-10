@@ -21,7 +21,7 @@ the community has made some excellent tutorial videos, I invite you to have a lo
 	* [Onion-OS](#To-use-with-Onion-OS)
 	* [MiniUI](#To-use-with-MiniUI)
 * [Videos tutorials](#Videos-tutorials)
-* [Community logos's included](#Community-logos's-included)
+* [Community logos's included](#Community-logos-s-included)
 * [Add your own logo in the collection](#Add-your-own-logo-in-the-collection)
 * [Release Notes](#Release-Notes)
 * [Detailed documentation](#Detailed-documentation)
@@ -57,7 +57,7 @@ More details in the video about Easy LogoTweak made by Retro Game Corps : https:
 ## Add your own logo in the collection
 ```
 	- create a new folder in app\logotweak\logos
-	- Put your images files rotated 180 degrees inside this new folder (image1.jpg is required,image2.jpg and image3.jpg are optional) 
+	- Put your images files rotated 180 degrees inside this new folder (image1.jpg is required max file size is about 60kB. image2.jpg and image3.jpg are optional) 
 	- Then you can run logotweak to see the result ;)
 	
 More technical details about logo creation in the detailed documentation below. 
@@ -81,10 +81,7 @@ Another excellent tutorial video about Easy LogoTweak  made by Retro Game Corps 
 ------------------------------------------------
  ## Community logos's included :
 
-<img src="https://user-images.githubusercontent.com/7110113/177894062-f1659a3b-9795-4374-b43c-6528800749e1.png" width="200" height="300">
-
-
-
+<img src="https://user-images.githubusercontent.com/7110113/183784303-4e468a38-61ee-43f2-ab43-0f647e6cd9b4.png" width="200" height="300">
 
 
 
