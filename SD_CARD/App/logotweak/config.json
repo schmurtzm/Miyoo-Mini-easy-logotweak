@@ -1,6 +1,6 @@
 {
-"label":"logotweak V2.0",
+"label":"LogoTweak v2.0",
 "icon":"logotweak.png",
 "launch":"launch.sh",
-"description":"Flash boot logo"
+"description":"Easily change your boot logo."
 }
