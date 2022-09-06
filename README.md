@@ -8,21 +8,60 @@
 ```
 Easy Logotweak uses the flash app "Boot logo changer" created by Eggs and described in [the Wiki of Onion](https://github.com/jimgraygit/Onion/wiki/6.-Miyoo-mini-apps#boot-logo-changer-credit-eggs).
 
-Easy Logotweak is a based on a linux shell script which allows to backup your current boot logo, to choose a new one and to flash it in an easy way.
+Easy Logotweak is a based on a linux shell script which allows to choose a logo and to flash it in an easy way.
 It is presented as an app in Miyoo Mini menu.
 
+the community has made some excellent tutorial videos, I invite you to have a look at them, they are presented below.
+
+
+------------------------------------------------
 **Contents:**
-* [Videos tutorials](#Videos-tutorials)
-* [Community logos's included](#Community-logos's-included)
+* [Download](#Download)
 * [Installation](#Installation)
 	* [Onion-OS](#To-use-with-Onion-OS)
 	* [MiniUI](#To-use-with-MiniUI)
+* [Videos tutorials](#Videos-tutorials)
+* [Community logos's included](#Community-logos-s-included)
 * [Add your own logo in the collection](#Add-your-own-logo-in-the-collection)
 * [Release Notes](#Release-Notes)
 * [Detailed documentation](#Detailed-documentation)
 * [Thanks](#Thanks)
 
+------------------------------------------------
+## Download
 
+[Download here](https://github.com/schmurtzm/Miyoo-Mini-easy-logotweak/archive/refs/heads/main.zip)
+
+The "normal" way to download sources on Github :
+
+<img src="https://user-images.githubusercontent.com/7110113/177954376-4b36be7a-eb07-4cca-8fa6-7866e5bdece1.png" width="300" height="200">
+
+More details in the video about Easy LogoTweak made by Retro Game Corps : https://youtu.be/fMhtj9VQRSk?t=111
+
+------------------------------------------------
+## Installation
+
+ #### To use with Onion-OS
+```
+	1 - Open the downloaded archive and copy "logotweak" folder in your "App" folder.
+	2 - Run the app logotweak, and choose your logo. That' all : power off -> power on to see the result ;)
+```
+ #### To use with MiniUI
+```
+	1 - Open the downloaded archive and copy "logotweak" folder in "Tools" folder of your SD card
+	2 - Rename the folder "logotweak" to "logotweak.pak"
+	3 - Run the app logotweak, and choose your logo, that' all : power off -> power on to see the result ;)
+```
+~~After that you will find a backup called backup_xxxxxxxx which contains a backup of your previous logo.~~ (disabled: it was not useful)
+
+## Add your own logo in the collection
+```
+	- create a new folder in app\logotweak\logos
+	- Put your images files rotated 180 degrees inside this new folder (image1.jpg is required max file size is about 60kB. image2.jpg and image3.jpg are optional) 
+	- Then you can run logotweak to see the result ;)
+	
+More technical details about logo creation in the detailed documentation below. 
+```
 ------------------------------------------------
 ## Videos tutorials
 
@@ -39,37 +78,10 @@ Another excellent tutorial video about Easy LogoTweak  made by Retro Game Corps 
 [![Another excellent tutorial video made by Retro Game Corps](https://img.youtube.com/vi/fMhtj9VQRSk/0.jpg)](https://youtu.be/fMhtj9VQRSk])
 
 
-
 ------------------------------------------------
  ## Community logos's included :
 
-<img src="https://user-images.githubusercontent.com/7110113/174418913-c43e27ee-e1ec-4355-94e1-8269315d476b.png" width="200" height="300">
-
-
-## Installation
-
- #### To use with Onion-OS
-```
-	1 - copy logotweak folder in your app folder.
-	2 - Run the app logotweak, and choose your logo during the slideshow. That' all : power off -> power on to see the result ;)
-```
- #### To use with MiniUI
-```
-	1 - rename the folder to logotweak.pak
-	2 - Put it in the Tools folder.
-	3 - Run the app logotweak, and choose your logo during the slideshow. That' all : power off -> power on to see the result ;)
-```
-After that you will find a backup called backup_xxxxxxxx which contains a backup of your previous logo.
-
-## Add your own logo in the collection
-```
-	- create a new folder in app\logotweak\logos
-	- Put your images files rotated 180 degrees inside this new folder (image1.jpg is required,image2.jpg and image3.jpg are optional) 
-	- Then you can run logotweak to see the result ;)
-	
-More technical details about logo creation in the detailed documentation below. 
-```
-
+<img src="https://user-images.githubusercontent.com/7110113/183974023-98ee187e-5841-4959-990c-27a805be8e97.png" width="200" height="300">
 
 
 
@@ -87,9 +99,18 @@ More technical details about logo creation in the detailed documentation below.
 /*      (image1.jpg is used to display the preview directly, Thanks to eggs).               */
 /*    - image2.jpg and image3.jpg (logos for FW update) are now optional,                   */
 /*      by default the one from "Original" folder are used.                                 */
-/*    - and two new logos from the community 😉.                                            */
+/*    - and two new logos from the community !                                              */
 /*  v1.3 - 2022/06/24 :                                                                     */
 /*    - Solve display preview problems on MiniUI                                            */
+/*  v2.0 - 2022/07/07 :                                                                     */
+/*    - Can now navigate between logos with left/right keys                                 */
+/*    - Press select to see logo in fullscreen without instructions                         */
+/*    - Press menu to exit application                                                      */
+/*    - Resolve a problem when displaying instructions on Onion-OS                          */
+/*    - Indicates total of logos and current logo number                                    */
+/*    - Add a confirmation before flashing                                                  */
+/*    - Doesn't backup anymore the current logo (useless most of the time)                  */
+/*    - and new logos from the community !                                                  */
 ```
 
  ## Detailed documentation
