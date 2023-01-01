@@ -2,9 +2,10 @@
  An app for easy boot logo flashing on the Miyoo Mini
 
 ```
-!! **                                    Use it at your own risk :                                    ** !!
-!! ** logotweak write in the nand of the Miyoo Mini. A bad flash will cause your miyoo Mini to brick. ** !!
-!! **      Check your battery level (don't use it with low battery level) and use a good SD card.     ** !!
+!! **                                    Use it at your own risk :                                     ** !!
+!! ** logotweak write in the nand of the Miyoo Mini. A bad flash will cause your miyoo Mini to brick.  ** !!
+!! **      Check your battery level (don't use it with low battery level) and use a good SD card.      ** !!
+!! ** Do not use with firmware ulterior to 20220419. (20221216 and 20221224 are not supported for now) ** !!
 ```
 Easy Logotweak uses the flash app "Boot logo changer" created by Eggs and described in [the Wiki of Onion](https://github.com/jimgraygit/Onion/wiki/6.-Miyoo-mini-apps#boot-logo-changer-credit-eggs).
 
@@ -111,6 +112,8 @@ Another excellent tutorial video about Easy LogoTweak  made by Retro Game Corps 
 /*    - Add a confirmation before flashing                                                  */
 /*    - Doesn't backup anymore the current logo (useless most of the time)                  */
 /*    - and new logos from the community !                                                  */
+/*  v2.1 - 2023/01/02 :                                                                     */
+/*    - Firmware version check                                                              */
 ```
 
  ## Detailed documentation

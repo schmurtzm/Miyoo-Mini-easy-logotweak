@@ -16,9 +16,23 @@
 #	- Indicates total of logos and current logo number
 #	- Add a confirmation before flashing
 #	- Doesn't backup anymore the current logo (useless most of the time)
-
+# Easy LogoTweak v2.1
+#	- Firmware version check
 # Flash Application Credit: Eggs
 # Script Logo Selector Credit: Schmurtz
+
+
+MIYOO_VERSION=`/etc/fw_printenv miyoo_version`
+MIYOO_VERSION=${MIYOO_VERSION#miyoo_version=}
+echo ========================================================-- $MIYOO_VERSION   
+SUPPORTED_VERSION="202204200000" # date after 20220419 version 
+if [ $MIYOO_VERSION -gt $SUPPORTED_VERSION ]; then
+	./UI/blank
+	./UI/say "Firmware not supported."$'\n Versions further 20220419\nare not supported for now.\n\nPress a key to return to app menu.'
+	./UI/confirm any
+	exit 0
+fi
+
 
 progdir=`dirname "$0"`
 
