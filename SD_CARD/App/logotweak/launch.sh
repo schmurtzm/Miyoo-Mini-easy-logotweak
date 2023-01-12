@@ -18,7 +18,7 @@
 #	- Doesn't backup anymore the current logo (useless most of the time)
 # Easy LogoTweak v2.1
 #	- Firmware version check
-# Easy LogoTweak vX.X
+# Easy LogoTweak v2.2
 #	- Additional logic for BoyaMicro chips
 # Flash Application Credit: Eggs
 # Script Logo Selector Credit: Schmurtz
