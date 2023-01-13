@@ -25,6 +25,14 @@
 
 MIYOO_VERSION=`/etc/fw_printenv miyoo_version`
 MIYOO_VERSION=${MIYOO_VERSION#miyoo_version=}
+echo ========================================================-- $MIYOO_VERSION   
+SUPPORTED_VERSION="202301050000" # date after 20230104 community firmware 
+if [ $MIYOO_VERSION -gt $SUPPORTED_VERSION ]; then
+	./UI/blank
+	./UI/say "Firmware not supported."$'\n Versions further 20230104\nare not supported for now.\n\nPress a key to return to app menu.'
+	./UI/confirm any
+	exit 0
+fi
 
 progdir=`dirname "$0"`
 
