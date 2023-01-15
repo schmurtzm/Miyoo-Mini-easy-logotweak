@@ -18,57 +18,52 @@
 #	- Doesn't backup anymore the current logo (useless most of the time)
 # Easy LogoTweak v2.1
 #	- Firmware version check
+# Easy LogoTweak v2.2
+#	- Additional logic for BoyaMicro chips
 # Flash Application Credit: Eggs
 # Script Logo Selector Credit: Schmurtz
-
 
 MIYOO_VERSION=`/etc/fw_printenv miyoo_version`
 MIYOO_VERSION=${MIYOO_VERSION#miyoo_version=}
 echo ========================================================-- $MIYOO_VERSION   
-SUPPORTED_VERSION="202204200000" # date after 20220419 version 
+SUPPORTED_VERSION="202301050000" # date after 20230104 community firmware 
 if [ $MIYOO_VERSION -gt $SUPPORTED_VERSION ]; then
 	./UI/blank
-	./UI/say "Firmware not supported."$'\n Versions further 20220419\nare not supported for now.\n\nPress a key to return to app menu.'
+	./UI/say "Firmware not supported."$'\n Versions further 20230104\nare not supported for now.\n\nPress a key to return to app menu.'
 	./UI/confirm any
 	exit 0
 fi
-
 
 progdir=`dirname "$0"`
 
 cd $progdir
 
+# Check for SPI write capability
+CHECK_WRITE=`./checkwrite`
+CHECK_WRITE=$?
+
 # Let's build a kind of array of all logos folders
 i=0
 
 for d in ./logos/*/ ; do
-
         let i++;
 		# Arrays aren't avaible on this shell, we use a variable name with a suffix number as workaround
         eval Dir$i=\"$d\"
         eval echo  "\$Dir$i  ----  $d  ----- $i"
 		echo ------------------------
-
 done
-
-
 
 j=1
 DisplayInstructions=1
 
 while :
 do
-
 	./UI/blank
-	
 	# we affect the current selected folder to the variable "$d"
 	eval d=\"\$Dir$j\"
 	eval echo j = $j  ----  \$Dir$j   ------ $d
 
-	
 	if [ -f "$d/image1.jpg" ]; then
-	
-	
 		#  specific path force to use stock SDL or not , depending using Onion or MiniUI :
 		if [ -f "/mnt/SDCARD/.tmp_update/onionVersion/version.txt" ]; then
 			LD_LIBRARY_PATH=$progdir/UI:$LD_LIBRARY_PATH
@@ -77,36 +72,29 @@ do
 		fi
 	
 		#./UI/show "$d/preview.png" # == old way==
-	
 		./UI/jpgr "$d/image1.jpg"   # == Displays a rotated preview of the jpeg file
 		
-
-
 		echo ========================================================-- $DisplayInstructions   1
 		if [ "$KeyPressed" = "select" ]; then    # == if select has been pressed we don't display the text instructions
 		echo ========================================================-- $DisplayInstructions   2
-			if [ "$DisplayInstructions" = "1" ]; then
-				DisplayInstructions=0
-				echo ========================================================-- $DisplayInstructions   3
-			else
-				DisplayInstructions=1
-				echo ========================================================-- $DisplayInstructions   4
-			fi
+		if [ "$DisplayInstructions" = "1" ]; then
+			DisplayInstructions=0
+			echo ========================================================-- $DisplayInstructions   3
+		else
+			DisplayInstructions=1
+			echo ========================================================-- $DisplayInstructions   4
+		fi
 		fi
 		
 		if [ "$DisplayInstructions" = "1" ]; then
 			./UI/say "$j/$i Flash this logo ?"$'\n\n\n\n\nA = flash  Select = fullscreen  Menu = quit\n<-/-> show prev/next logo\n'
 			echo ========================================================-- $DisplayInstructions   5
 		fi
-		
-
-	
 	else
 		# if the current image1.jpg is missing, we describe the problem on the screen
 		echo "$d/image1.jpg is missing..."
 		./UI/say "image1.jpg is missing in folder"$'\n'"$d"$'\n\n\n\nMenu = quit\n<-/-> show prev/next logo'
 		#./UI/say "preview.png is missing"$'\n'"Run tools\Create_Previews.bat" # == old way==
-
 	fi
 
 	# we run a little tool to catch the last pressed key
@@ -138,24 +126,19 @@ do
 		fi
 	fi
 
-
-
 	if [ "$KeyPressed" = "menu" ]; then
 		exit
 	fi
 
 	# if we press "A" for flashing and the current image exists
 	if [ "$KeyPressed" = "A" ] && [ -f "$d/image1.jpg" ]; then
-	
-			./UI/blank
-			./UI/say "Really want to flash ?"$'\n\n A = Confirm    B = Cancel'
-			sleep 0.5
+		./UI/blank
+		./UI/say "Really want to flash ?"$'\n\n A = Confirm    B = Cancel'
+		sleep 0.5
 		if  ./UI/confirm; then 
 			echo "=== Start flashing ==="
-			
 
 			cp "$d/image1.jpg" $progdir
-			
 			
 			# if image2.jpg and image3.jpg are not here we get it from the "Original" folder
 			if [ -f "$d/image2.jpg" ]; then
@@ -196,32 +179,38 @@ do
 				# mv ./image2.jpg ./$BackupFolder
 				# mv ./image3.jpg ./$BackupFolder
 				# sleep 1
-				./UI/blank
-				./UI/say "Flashing..."
-				./logowrite
-				sleep 1.5
-				./UI/blank
-				./UI/say "Flash Done."$'\n Reboot to see changes.\n\nPress a key to return to app menu.'
-				./UI/confirm any
-				exit 0
+				if [ $CHECK_WRITE -eq 0 ]; then
+					./UI/blank
+					./UI/say "Flashing..."
+					./logowrite
+					sleep 1.5
+					./UI/blank
+					./UI/say "Flash Done."$'\n Reboot to see changes.\n\nPress a key to return to app menu.'
+					./UI/confirm any
+					exit 0
+				fi
+				if [ $CHECK_WRITE -eq 1 ]; then
+					./UI/blank
+					./UI/say "Creating logo fw file..."
+					./logoimgmake
+					mv ./miyoo283_fw.img /mnt/SDCARD/miyoo283_fw.img
+					sleep 1.5
+					./UI/blank
+					./UI/say "IMG file created."$'\n Power off, hold MENU\nand plug into USB charger\nTurn off when charging\nanimation is shown.'
+					./UI/confirm any
+					exit 0
+				fi
 			else
 				./UI/blank
 				./UI/say "logo.img doesn t have the right size"$'\n'"exiting without flash !"
 				sleep 3
 				exit 0
 			fi
-			
-			
-			
 		else
 			./UI/blank
-			./UI/say "Canceling"
+			./UI/say "Cancelling"
 			sleep 1
 		fi
-
-
-
 	fi
-
 done
 
