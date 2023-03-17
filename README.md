@@ -1,5 +1,5 @@
 # Miyoo Mini - Easy Logotweak  By Schmurtz
- An app for easy boot logo flashing on the Miyoo Mini
+ An app for easy boot logo flashing on the Miyoo Mini and Miyoo Mini Plus
 
 ```
 !! **                                    Use it at your own risk :                                     ** !!
@@ -11,7 +11,7 @@ Easy Logotweak uses the flash app "Boot logo changer" created by Eggs and descri
 Easy Logotweak is a based on a linux shell script which allows to choose a logo and to flash it in an easy way.
 It is presented as an app in Miyoo Mini menu.
 
-the community has made some excellent tutorial videos, I invite you to have a look at them, they are presented below.
+The community has made some excellent tutorial videos, I invite you to have a look at them, they are presented below.
 
 
 ------------------------------------------------
@@ -115,6 +115,8 @@ Another excellent tutorial video about Easy LogoTweak  made by Retro Game Corps 
 /*    - Firmware version check                                                              */
 /*  v2.2 - 2023/01/16 :                                                                     */
 /*    - Additional logic for BoyaMicro chips (credits Xpndable)                             */
+/*  v2.3 - 2023/03/17 :                                                                     */
+/*    - Miyoo Mini+ support                                                                 */
 ```
 
  ## Detailed documentation
