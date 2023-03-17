@@ -28,10 +28,10 @@
 MIYOO_VERSION=`/etc/fw_printenv miyoo_version`
 MIYOO_VERSION=${MIYOO_VERSION#miyoo_version=}
 echo ========================================================-- $MIYOO_VERSION   
-SUPPORTED_VERSION="202303121739" # last known firmware for the Mini+
+SUPPORTED_VERSION="202303131840" # last known firmware for the Mini+
 if [ $MIYOO_VERSION -gt $SUPPORTED_VERSION ]; then
 	./UI/blank
-	./UI/say "Firmware not supported."$'\n Versions further 20230312\nare not supported for now.\n\nPress a key to return to app menu.'
+	./UI/say "Firmware not supported."$'\n Versions further 20230313\nare not supported for now.\n\nPress a key to return to app menu.'
 	./UI/confirm any
 	exit 0
 fi
