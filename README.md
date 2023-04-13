@@ -30,7 +30,7 @@ The community has made some excellent tutorial videos, I invite you to have a lo
 ------------------------------------------------
 ## Download
 
-[Download here](https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2Fschmurtzm%2FMiyoo-Mini-easy-logotweak%2Ftree%2Fmain%2FSD_CARD%2FApp%2Flogotweak)
+[Download here](https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2Fschmurtzm%2FMiyoo-Mini-easy-logotweak%2Ftree%2Fmain%2FSD_CARD%2FApp)
 
 
 The "normal" way to download sources on Github :
