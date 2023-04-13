@@ -22,8 +22,19 @@
 #	- Additional logic for BoyaMicro chips
 # Easy LogoTweak v2.3
 #	- Miyoo Mini+ support
+# Easy LogoTweak v2.4
+#	- Fix Miyoo Mini+ screen offset on firmware 202303262339 
 # Flash Application Credit: Eggs
 # Script Logo Selector Credit: Schmurtz
+
+HexEdit() {
+	filename=$1
+	offset=$2
+	value="$3"
+	binary_value=$(printf "%b" "\\x$value")
+	printf "$binary_value" | dd of="$filename" bs=1 seek="$offset" conv=notrunc
+}
+
 
 MIYOO_VERSION=`/etc/fw_printenv miyoo_version`
 MIYOO_VERSION=${MIYOO_VERSION#miyoo_version=}
@@ -164,6 +175,14 @@ do
 			# we create the logo.img
 			./logomake
 			
+			
+			if [ "$MIYOO_VERSION" -eq "202303262339" ]; then
+				# Patch screen offset for the Mini+
+				HexEdit $progdir/logo.img 1086 2C
+				HexEdit $progdir/logo.img 1088 4C
+			fi
+
+
 			# just in case we check the size of the created logo.img
 			myfilesize=$(wc -c "$progdir/logo.img" | awk '{print $1}')
 			
