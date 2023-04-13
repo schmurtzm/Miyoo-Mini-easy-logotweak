@@ -23,9 +23,17 @@
 # Easy LogoTweak v2.3
 #	- Miyoo Mini+ support
 # Easy LogoTweak v2.4
-#	- Fix Miyoo Mini+ screen offset on firmware 202303262339 
+#	- Check that used images are really a jpg files
+#	- Fix Miyoo Mini+ screen offset on firmware 202303262339
 # Flash Application Credit: Eggs
 # Script Logo Selector Credit: Schmurtz
+
+
+progdir=`dirname "$0"`
+cd $progdir
+
+
+echo performance > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
 
 HexEdit() {
 	filename=$1
@@ -41,18 +49,16 @@ MIYOO_VERSION=${MIYOO_VERSION#miyoo_version=}
 echo ========================================================-- $MIYOO_VERSION   
 SUPPORTED_VERSION="202303262339" # last known firmware for the Mini+
 if [ $MIYOO_VERSION -gt $SUPPORTED_VERSION ]; then
-	./UI/blank
-	./UI/say "Firmware not supported."$'\n Versions further 20230326\nare not supported for now.\n\nPress a key to return to app menu.'
-	./UI/confirm any
+	./bin/blank
+	./bin/say "Firmware not supported."$'\n Versions further 20230326\nare not supported for now.\n\nPress a key to return to app menu.'
+	./bin/confirm any
 	exit 0
 fi
 
-progdir=`dirname "$0"`
 
-cd $progdir
 
 # Check for SPI write capability
-CHECK_WRITE=`./checkwrite`
+CHECK_WRITE=`./bin/checkwrite`
 CHECK_WRITE=$?
 
 # Let's build a kind of array of all logos folders
@@ -71,7 +77,7 @@ DisplayInstructions=1
 
 while :
 do
-	./UI/blank
+	./bin/blank
 	# we affect the current selected folder to the variable "$d"
 	eval d=\"\$Dir$j\"
 	eval echo j = $j  ----  \$Dir$j   ------ $d
@@ -79,13 +85,13 @@ do
 	if [ -f "$d/image1.jpg" ]; then
 		#  specific path force to use stock SDL or not , depending using Onion or MiniUI :
 		if [ -f "/mnt/SDCARD/.tmp_update/onionVersion/version.txt" ]; then
-			LD_LIBRARY_PATH=$progdir/UI:$LD_LIBRARY_PATH
+			LD_LIBRARY_PATH=$progdir/bin:$LD_LIBRARY_PATH
 		else
-			LD_LIBRARY_PATH=$progdir/UI:/customer/lib:/config/lib:/lib
+			LD_LIBRARY_PATH=$progdir/bin:/customer/lib:/config/lib:/lib
 		fi
 	
-		#./UI/show "$d/preview.png" # == old way==
-		./UI/jpgr "$d/image1.jpg"   # == Displays a rotated preview of the jpeg file
+		#./bin/show "$d/preview.png" # == old way==
+		./bin/jpgr "$d/image1.jpg"   # == Displays a rotated preview of the jpeg file
 		
 		echo ========================================================-- $DisplayInstructions   1
 		if [ "$KeyPressed" = "select" ]; then    # == if select has been pressed we don't display the text instructions
@@ -100,25 +106,25 @@ do
 		fi
 		
 		if [ "$DisplayInstructions" = "1" ]; then
-			./UI/say "$j/$i Flash this logo ?"$'\n\n\n\n\nA = flash  Select = fullscreen  Menu = quit\n<-/-> show prev/next logo\n'
+			./bin/say "$j/$i Flash this logo ?"$'\n\n\n\n\nA = flash  Select = fullscreen  Menu = quit\n<-/-> show prev/next logo\n'
 			echo ========================================================-- $DisplayInstructions   5
 		fi
 	else
 		# if the current image1.jpg is missing, we describe the problem on the screen
 		echo "$d/image1.jpg is missing..."
-		./UI/say "image1.jpg is missing in folder"$'\n'"$d"$'\n\n\n\nMenu = quit\n<-/-> show prev/next logo'
-		#./UI/say "preview.png is missing"$'\n'"Run tools\Create_Previews.bat" # == old way==
+		./bin/say "image1.jpg is missing in folder"$'\n'"$d"$'\n\n\n\nMenu = quit\n<-/-> show prev/next logo'
+		#./bin/say "preview.png is missing"$'\n'"Run tools\Create_Previews.bat" # == old way==
 	fi
 
 	# we run a little tool to catch the last pressed key
-	KeyPressed=$(./UI/getkey)
+	KeyPressed=$(./bin/getkey)
 	sleep 0.2  # Little debounce
 	echo $KeyPressed
 
 	if [ "$KeyPressed" = "left" ]; then
 		if [ $j -eq 1 ]; then # == already at minimal index
-			./UI/blank
-			./UI/say "Already on first logo !"$'\n'
+			./bin/blank
+			./bin/say "Already on first logo !"$'\n'
 			sleep 0.7
 		fi
 		
@@ -129,8 +135,8 @@ do
 
 	if [ "$KeyPressed" = "right" -o "$KeyPressed" = "B"  ]; then
 		if [ $j -eq $i ]; then # == already at maximal index
-			./UI/blank
-			./UI/say "Already on last logo !"$'\n'
+			./bin/blank
+			./bin/say "Already on last logo !"$'\n'
 			sleep 0.7
 		fi
 		
@@ -145,10 +151,11 @@ do
 
 	# if we press "A" for flashing and the current image exists
 	if [ "$KeyPressed" = "A" ] && [ -f "$d/image1.jpg" ]; then
-		./UI/blank
-		./UI/say "Really want to flash ?"$'\n\n A = Confirm    B = Cancel'
+	
+		./bin/blank
+		./bin/say "Really want to flash ?"$'\n\n A = Confirm    B = Cancel'
 		sleep 0.5
-		if  ./UI/confirm; then 
+		if  ./bin/confirm; then 
 			echo "=== Start flashing ==="
 
 			cp "$d/image1.jpg" $progdir
@@ -157,23 +164,45 @@ do
 			if [ -f "$d/image2.jpg" ]; then
 				cp "$d/image2.jpg" $progdir
 			else
-				./UI/blank
-				./UI/say "No logo for FW update"$'\n'"Taking FW logo by default..."
-				sleep 1
+				./bin/blank
+				./bin/say "Importing default stock image"$'\n'"for \"System Upgrade\" screen."
+				sleep 1.5
 				cp "./logos/Original/image2.jpg" $progdir
 			fi
 
 			if [ -f "$d/image3.jpg" ]; then
 				cp "$d/image3.jpg" $progdir
 			else
-				./UI/blank
-				./UI/say "No logo for FW update"$'\n'"Taking FW logo by default..."
-				sleep 1
+				./bin/blank
+				./bin/say "Importing default stock image"$'\n'"for \"Super Upgrade\" screen."
+				sleep 1.5
 				cp "./logos/Original/image3.jpg" $progdir
 			fi
 			
+			
+			
+			# We check if each file is really a jpg file. (and not png files renamed).
+			if ! ./bin/checkjpg ./image1.jpg; then
+				./bin/blank
+				./bin/say "image1.jpg is not a valid jpg file !"$'\n'"Exiting without flash !"
+				sleep 3
+				exit 0
+			fi
+			if ! ./bin/checkjpg ./image2.jpg; then
+				./bin/blank
+				./bin/say "image2.jpg is not a valid jpg file !"$'\n'"Exiting without flash !"
+				sleep 3
+				exit 0
+			fi
+			if ! ./bin/checkjpg ./image3.jpg; then
+				./bin/blank
+				./bin/say "image3.jpg is not a valid jpg file !"$'\n'"Exiting without flash !"
+				sleep 3
+				exit 0
+			fi
+			
 			# we create the logo.img
-			./logomake
+			./bin/logomake
 			
 			
 			if [ "$MIYOO_VERSION" -eq "202303262339" ]; then
@@ -187,13 +216,13 @@ do
 			myfilesize=$(wc -c "$progdir/logo.img" | awk '{print $1}')
 			
 			if [ "$myfilesize" = "131072" ]; then
-				./UI/blank
-				./UI/say "${myfilesize}kb : Right file size"
-				sleep 1
+				./bin/blank
+				./bin/say "${myfilesize}kb : Right file size"
+				sleep 1.5
 				# == We don't backup anymore the current logo (useless most of the time) ==
-				# ./UI/blank
-				# ./UI/say "Backuping current logo..."
-				# ./logoread
+				# ./bin/blank
+				# ./bin/say "Backuping current logo..."
+				# ./bin/logoread
 				# BackupFolder=backup_$(date +%Y%m%d_%H%M%S)
 				# mkdir ./$BackupFolder
 				# mv ./image1.jpg ./$BackupFolder
@@ -201,35 +230,35 @@ do
 				# mv ./image3.jpg ./$BackupFolder
 				# sleep 1
 				if [ $CHECK_WRITE -eq 0 ]; then
-					./UI/blank
-					./UI/say "Flashing..."
-					./logowrite
+					./bin/blank
+					./bin/say "Flashing..."
+					./bin/logowrite
 					sleep 1.5
-					./UI/blank
-					./UI/say "Flash Done."$'\n Reboot to see changes.\n\nPress a key to return to app menu.'
-					./UI/confirm any
+					./bin/blank
+					./bin/say "Flash Done."$'\n Reboot to see changes.\n\nPress a key to return to app menu.'
+					./bin/confirm any
 					exit 0
 				fi
 				if [ $CHECK_WRITE -eq 1 ]; then
-					./UI/blank
-					./UI/say "Creating logo fw file..."
-					./logoimgmake
+					./bin/blank
+					./bin/say "Creating logo fw file..."
+					./bin/logoimgmake
 					mv ./miyoo283_fw.img /mnt/SDCARD/miyoo283_fw.img
 					sleep 1.5
-					./UI/blank
-					./UI/say "IMG file created."$'\n Power off, hold MENU\nand plug into USB charger\nTurn off when charging\nanimation is shown.'
-					./UI/confirm any
+					./bin/blank
+					./bin/say "IMG file created."$'\n Power off, hold MENU\nand plug into USB charger\nTurn off when charging\nanimation is shown.'
+					./bin/confirm any
 					exit 0
 				fi
 			else
-				./UI/blank
-				./UI/say "logo.img doesn t have the right size"$'\n'"exiting without flash !"
+				./bin/blank
+				./bin/say "logo.img doesn t have the right size"$'\n'"Exiting without flash !"
 				sleep 3
 				exit 0
 			fi
 		else
-			./UI/blank
-			./UI/say "Cancelling"
+			./bin/blank
+			./bin/say "Cancelling"
 			sleep 1
 		fi
 	fi

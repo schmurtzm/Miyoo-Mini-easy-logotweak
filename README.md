@@ -30,7 +30,8 @@ The community has made some excellent tutorial videos, I invite you to have a lo
 ------------------------------------------------
 ## Download
 
-[Download here](https://github.com/schmurtzm/Miyoo-Mini-easy-logotweak/archive/refs/heads/main.zip)
+[Download here](https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2Fschmurtzm%2FMiyoo-Mini-easy-logotweak%2Ftree%2Fmain%2FSD_CARD%2FApp%2Flogotweak)
+
 
 The "normal" way to download sources on Github :
 
@@ -43,12 +44,12 @@ More details in the video about Easy LogoTweak made by Retro Game Corps : https:
 
  #### To use with Onion-OS
 ```
-	1 - Open the downloaded archive and copy "logotweak" folder in your "App" folder.
+	1 - Open the downloaded archive and extract "logotweak" folder in your "App" folder.
 	2 - Run the app logotweak, and choose your logo. That' all : power off -> power on to see the result ;)
 ```
  #### To use with MiniUI
 ```
-	1 - Open the downloaded archive and copy "logotweak" folder in "Tools" folder of your SD card
+	1 - Open the downloaded archive and extract "logotweak" folder in "Tools" folder of your SD card
 	2 - Rename the folder "logotweak" to "logotweak.pak"
 	3 - Run the app logotweak, and choose your logo, that' all : power off -> power on to see the result ;)
 ```
@@ -117,6 +118,10 @@ Another excellent tutorial video about Easy LogoTweak  made by Retro Game Corps 
 /*    - Additional logic for BoyaMicro chips (credits Xpndable)                             */
 /*  v2.3 - 2023/03/17 :                                                                     */
 /*    - Miyoo Mini+ support                                                                 */
+/*  v2.4 - 2023/04/13 :                                                                     */
+/*    - Miyoo Mini+ support                                                                 */
+/*    - Check that used images are really a jpg files                                       */
+/*    - Fix Miyoo Mini+ screen offset on firmware 202303262339                              */
 ```
 
  ## Detailed documentation
