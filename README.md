@@ -6,7 +6,7 @@
 !! ** logotweak write in the nand of the Miyoo Mini. A bad flash will cause your miyoo Mini to brick.  ** !!
 !! **      Check your battery level (don't use it with low battery level) and use a good SD card.      ** !!
 ```
-Easy Logotweak uses the flash app "Boot logo changer" created by Eggs and described in [the Wiki of Onion](https://github.com/jimgraygit/Onion/wiki/6.-Miyoo-mini-apps#boot-logo-changer-credit-eggs).
+Easy Logotweak uses the flash app "Boot logo changer" created by Eggs and described in [the Wiki of Onion](https://github.com/OnionUI/Onion/wiki/Third-Party-Apps#easy-logotweak).
 
 Easy Logotweak is a based on a linux shell script which allows to choose a logo and to flash it in an easy way.
 It is presented as an app in Miyoo Mini menu.
@@ -30,10 +30,10 @@ The community has made some excellent tutorial videos, I invite you to have a lo
 ------------------------------------------------
 ## Download
 
-[Download here](https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2Fschmurtzm%2FMiyoo-Mini-easy-logotweak%2Ftree%2Fmain%2FSD_CARD%2FApp)
+[Click here for direct download](https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2Fschmurtzm%2FMiyoo-Mini-easy-logotweak%2Ftree%2Fmain%2FSD_CARD%2FApp)
 
 
-The "normal" way to download sources on Github :
+Or use the "normal" way to download sources on Github :
 
 <img src="https://user-images.githubusercontent.com/7110113/177954376-4b36be7a-eb07-4cca-8fa6-7866e5bdece1.png" width="300" height="200">
 
@@ -66,20 +66,22 @@ More technical details about logo creation in the detailed documentation below.
 ------------------------------------------------
 ## Videos tutorials
 
-An excellent tutorial video about Easy LogoTweak made by RetroBreeze (click on the picture to view it) :
+
+An excellent tutorial video about Easy LogoTweak  made by Retro Game Corps (click on the picture to view it) :
+
+(great instructions about how to download from github, the problem on MiniUI mentioned in this video has been solved in version 1.3)
+
+[![An excellent tutorial video made by Retro Game Corps](https://img.youtube.com/vi/fMhtj9VQRSk/0.jpg)](https://youtu.be/fMhtj9VQRSk])
+
+
+------------------------------------------------
+
+Another excellent tutorial video about Easy LogoTweak made by RetroBreeze (disabled) :
 
 [![An excellent tutorial video made by RetroBreeze](https://img.youtube.com/vi/_GWbgp1Nw3s/0.jpg)](https://youtu.be/_GWbgp1Nw3s])
 
 ------------------------------------------------
 
-Another excellent tutorial video about Easy LogoTweak  made by Retro Game Corps (click on the picture to view it) :
-
-(great instructions about how to download from github, the problem on MiniUI mentioned in this video has been solved in version 1.3)
-
-[![Another excellent tutorial video made by Retro Game Corps](https://img.youtube.com/vi/fMhtj9VQRSk/0.jpg)](https://youtu.be/fMhtj9VQRSk])
-
-
-------------------------------------------------
  ## Community logos's included :
 
 <img src="https://user-images.githubusercontent.com/7110113/183974023-98ee187e-5841-4959-990c-27a805be8e97.png" width="200" height="300">
@@ -119,7 +121,6 @@ Another excellent tutorial video about Easy LogoTweak  made by Retro Game Corps 
 /*  v2.3 - 2023/03/17 :                                                                     */
 /*    - Miyoo Mini+ support                                                                 */
 /*  v2.4 - 2023/04/13 :                                                                     */
-/*    - Miyoo Mini+ support                                                                 */
 /*    - Check that used images are really a jpg files                                       */
 /*    - Fix Miyoo Mini+ screen offset on firmware 202303262339                              */
 ```
