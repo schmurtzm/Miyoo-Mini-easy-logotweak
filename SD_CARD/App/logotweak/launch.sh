@@ -75,39 +75,35 @@ done
 j=1
 DisplayInstructions=1
 
+#  specific path force to use stock SDL or not , depending using Onion or MiniUI :
+if [ -f "/mnt/SDCARD/.tmp_update/onionVersion/version.txt" ]; then
+	LD_LIBRARY_PATH=$progdir/bin:$LD_LIBRARY_PATH
+else
+	LD_LIBRARY_PATH=$progdir/bin:/customer/lib:/config/lib:/lib
+fi
+
 while :
 do
-	./bin/blank
+	# ./bin/blank   # not necessary when jpgr is executed
 	# we affect the current selected folder to the variable "$d"
 	eval d=\"\$Dir$j\"
 	eval echo j = $j  ----  \$Dir$j   ------ $d
 
 	if [ -f "$d/image1.jpg" ]; then
-		#  specific path force to use stock SDL or not , depending using Onion or MiniUI :
-		if [ -f "/mnt/SDCARD/.tmp_update/onionVersion/version.txt" ]; then
-			LD_LIBRARY_PATH=$progdir/bin:$LD_LIBRARY_PATH
-		else
-			LD_LIBRARY_PATH=$progdir/bin:/customer/lib:/config/lib:/lib
-		fi
 	
 		#./bin/show "$d/preview.png" # == old way==
 		./bin/jpgr "$d/image1.jpg"   # == Displays a rotated preview of the jpeg file
 		
-		echo ========================================================-- $DisplayInstructions   1
 		if [ "$KeyPressed" = "select" ]; then    # == if select has been pressed we don't display the text instructions
-		echo ========================================================-- $DisplayInstructions   2
-		if [ "$DisplayInstructions" = "1" ]; then
-			DisplayInstructions=0
-			echo ========================================================-- $DisplayInstructions   3
-		else
-			DisplayInstructions=1
-			echo ========================================================-- $DisplayInstructions   4
-		fi
+			if [ "$DisplayInstructions" = "1" ]; then
+				DisplayInstructions=0
+			else
+				DisplayInstructions=1
+			fi
 		fi
 		
 		if [ "$DisplayInstructions" = "1" ]; then
 			./bin/say "$j/$i Flash this logo ?"$'\n\n\n\n\nA = flash  Select = fullscreen  Menu = quit\n<-/-> show prev/next logo\n'
-			echo ========================================================-- $DisplayInstructions   5
 		fi
 	else
 		# if the current image1.jpg is missing, we describe the problem on the screen
@@ -118,7 +114,7 @@ do
 
 	# we run a little tool to catch the last pressed key
 	KeyPressed=$(./bin/getkey)
-	sleep 0.2  # Little debounce
+	sleep 0.15  # Little debounce
 	echo $KeyPressed
 
 	if [ "$KeyPressed" = "left" ]; then
