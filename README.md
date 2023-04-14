@@ -231,19 +231,24 @@ https://www.reddit.com/r/MiyooMini/comments/v6e1f1/custom_boot_screen_tutorial/
 ------------------------------------------------
 
 
-
-
  ## Thanks
 You like this project ? You want to improve this project ? 
 
 Do not hesitate, **Participate**, there are many ways :
 - If you don't know bash language you can test releases , and post some issues, some tips and tricks for daily use.
 - If you're a coder or a graphist you can fork, edit and publish your modifications with Pull Request on github :)<br/>
+- I now have a [![Participate to my Patreon][Patreon-shield]][patreon], feel free to support me if you like Easy LogoTweak and other projects of my "universe" !
+ ([patreon.com/schmurtz](patreon.com/schmurtz))
 - Or you can buy me a coffee to keep me awake during night coding sessions :dizzy_face: !<br/><br/>
 [![Buy me a coffee][buymeacoffee-shield]][buymeacoffee]
+
+
 <br/><br/>
 
 [buymeacoffee-shield]: https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-2.svg
 [buymeacoffee]: https://www.buymeacoffee.com/schmurtz
+[Patreon-shield]:https://img.shields.io/badge/Patreon-F96854?style=for-the-badge&logo=patreon&logoColor=white
+[patreon]: https://www.buymeacoffee.com/schmurtz
+
  ===========================================================================
  
