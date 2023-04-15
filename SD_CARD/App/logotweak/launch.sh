@@ -153,6 +153,8 @@ do
 		sleep 0.5
 		if  ./bin/confirm; then 
 			echo "=== Start flashing ==="
+			
+			rm "$progdir/logo.img"
 
 			cp "$d/image1.jpg" $progdir
 			

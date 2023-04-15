@@ -1,0 +1,4 @@
+Global Preview Generator by Schmurtz
+
+This script allows to create one image with thumbnails of all the boot logos.
+The generated image is displayed on schmurtzm/Miyoo-Mini-easy-logotweak Github readme.

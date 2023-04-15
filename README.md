@@ -84,7 +84,7 @@ Another excellent tutorial video about Easy LogoTweak made by RetroBreeze (disab
 
  ## Community logos's included :
 
-<img src="https://user-images.githubusercontent.com/7110113/183974023-98ee187e-5841-4959-990c-27a805be8e97.png" width="200" height="300">
+<img src="https://raw.githubusercontent.com/schmurtzm/Miyoo-Mini-easy-logotweak/main/tools/Global Preview Generator/Preview.webp" width="300">
 
 
 
