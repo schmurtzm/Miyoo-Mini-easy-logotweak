@@ -43,7 +43,30 @@ HexEdit() {
 	printf "$binary_value" | dd of="$filename" bs=1 seek="$offset" conv=notrunc
 }
 
-
+checkjpg() {
+	JpgFilePath=$1
+	Filename=`basename "$JpgFilePath"`
+	echo
+	./bin/checkjpg "$JpgFilePath"
+	if [ $? -eq 0 ]; then
+		echo "$Filename is a valid VGA JPG file"
+	elif [ $? -eq 1 ]; then
+		./bin/blank
+		./bin/say "$Filename is not a valid jpg file !"$'\n\n(Try to open it with your favorite image\neditor and \"save as\" -> jpg again)\n\nExiting without flash !'
+		./bin/confirm any
+		exit 0
+	elif [ $? -eq 2 ]; then
+		./bin/blank
+		./bin/say "$Filename "$'doesn\'t have \nthe right resolution !\n\nIt should be 640x480 (VGA)\n\nExiting without flash !'
+		./bin/confirm any
+		exit 0
+	else
+	  echo "Unknown Checkjpg error occurred"
+	  exit 0
+	fi
+}
+			
+			
 MIYOO_VERSION=`/etc/fw_printenv miyoo_version`
 MIYOO_VERSION=${MIYOO_VERSION#miyoo_version=}
 echo ========================================================-- $MIYOO_VERSION   
@@ -177,27 +200,10 @@ do
 				cp "./logos/Original/image3.jpg" $progdir
 			fi
 			
-			
-			
 			# We check if each file is really a jpg file. (and not png files renamed).
-			if ! ./bin/checkjpg ./image1.jpg; then
-				./bin/blank
-				./bin/say "image1.jpg is not a valid jpg file !"$'\n'"Exiting without flash !"
-				sleep 3
-				exit 0
-			fi
-			if ! ./bin/checkjpg ./image2.jpg; then
-				./bin/blank
-				./bin/say "image2.jpg is not a valid jpg file !"$'\n'"Exiting without flash !"
-				sleep 3
-				exit 0
-			fi
-			if ! ./bin/checkjpg ./image3.jpg; then
-				./bin/blank
-				./bin/say "image3.jpg is not a valid jpg file !"$'\n'"Exiting without flash !"
-				sleep 3
-				exit 0
-			fi
+			checkjpg "./image1.jpg"
+			checkjpg "./image2.jpg"
+			checkjpg "./image3.jpg"
 			
 			# we create the logo.img
 			./bin/logomake
@@ -205,8 +211,8 @@ do
 			
 			if [ "$MIYOO_VERSION" -eq "202303262339" ]; then
 				# Patch screen offset for the Mini+
-				HexEdit $progdir/logo.img 1086 2C
-				HexEdit $progdir/logo.img 1088 4C
+				HexEdit "$progdir/logo.img" 1086 2C
+				HexEdit "$progdir/logo.img" 1088 4C
 			fi
 
 
