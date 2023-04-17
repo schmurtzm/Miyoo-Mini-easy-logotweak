@@ -177,8 +177,9 @@ do
 	if [ "$KeyPressed" = "A" ] && [ -f "$d/image1.jpg" ]; then
 	
 		./bin/blank
-		./bin/say "Really want to flash ?"$'\n\n A = Confirm    B = Cancel'
+		./bin/say "Really want to flash ?"$'\n'\("`basename "$d`"\)$'\n\nA = Confirm    B = Cancel'
 		sleep 0.5
+		
 		if  ./bin/confirm; then 
 			echo "=== Start flashing ==="
 			
