@@ -58,7 +58,7 @@ More details in the video about Easy LogoTweak made by Retro Game Corps : https:
 ## Add your own logo in the collection
 ```
 	- create a new folder in app\logotweak\logos
-	- Put your images files rotated 180 degrees inside this new folder (image1.jpg is required max file size is about 60kB. image2.jpg and image3.jpg are optional) 
+	- Place your 180 degree rotated image files in this new folder (image1.jpg is required, max file size is about 115kB. image2.jpg and image3.jpg are optional (used for firmware updates)) 
 	- Then you can run logotweak to see the result ;)
 	
 More technical details about logo creation in the detailed documentation below. 
@@ -123,6 +123,10 @@ Another excellent tutorial video about Easy LogoTweak made by RetroBreeze (disab
 /*  v2.4 - 2023/04/13 :                                                                     */
 /*    - Check that used images are really a jpg files                                       */
 /*    - Fix Miyoo Mini+ screen offset on firmware 202303262339                              */
+/*  v2.5 - 2023/04/17 :                                                                     */
+/*    - Better jpg error messages when an image is not valid                                */
+/*    - Default flash logos (image2.jpg and image3.jpg) are now more compressed             */
+/*    - Fixes for complex paths                                                             */
 ```
 
  ## Detailed documentation

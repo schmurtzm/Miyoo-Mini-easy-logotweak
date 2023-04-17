@@ -5,7 +5,7 @@
 #	- Logos are now dynamically generated with logomake
 # Easy LogoTweak v1.2
 #	- Logos preview doesn't require to generate a png anymore (image1.jpg is used to generate preview, Thanks Eggs).
-#	- image2.jpg and image3.jpg (logos for FW update) are now optional, by default the one from "Original" folder are used.
+#	- image2.jpg and image3.jpg (logos for FW update) are now optional, by default the one from "_Original" folder are used.
 # Easy LogoTweak v1.3
 #	- Solve display preview problems on MiniUI
 # Easy LogoTweak v2.0
@@ -25,6 +25,10 @@
 # Easy LogoTweak v2.4
 #	- Check that used images are really a jpg files
 #	- Fix Miyoo Mini+ screen offset on firmware 202303262339
+# Easy LogoTweak v2.5
+#	- Better jpg error messages when an image is not valid
+#	- Default flash logos (image2.jpg and image3.jpg) are now more compressed -> 115KB available for the boot logo
+#	- Fixes for complex paths
 # Flash Application Credit: Eggs
 # Script Logo Selector Credit: Schmurtz
 
@@ -69,7 +73,7 @@ checkjpg() {
 			
 MIYOO_VERSION=`/etc/fw_printenv miyoo_version`
 MIYOO_VERSION=${MIYOO_VERSION#miyoo_version=}
-echo ========================================================-- $MIYOO_VERSION   
+echo "Current firmware version : $MIYOO_VERSION"
 SUPPORTED_VERSION="202303262339" # last known firmware for the Mini+
 if [ $MIYOO_VERSION -gt $SUPPORTED_VERSION ]; then
 	./bin/blank
@@ -86,14 +90,14 @@ CHECK_WRITE=$?
 
 # Let's build a kind of array of all logos folders
 i=0
-
+echo "------------------------"
 for d in ./logos/*/ ; do
         let i++;
 		# Arrays aren't avaible on this shell, we use a variable name with a suffix number as workaround
         eval Dir$i=\"$d\"
-        eval echo  "\$Dir$i  ----  $d  ----- $i"
-		echo ------------------------
+        echo  "Dir$i = $d"
 done
+echo "------------------------"
 
 j=1
 DisplayInstructions=1
@@ -110,7 +114,8 @@ do
 	# ./bin/blank   # not necessary when jpgr is executed
 	# we affect the current selected folder to the variable "$d"
 	eval d=\"\$Dir$j\"
-	eval echo j = $j  ----  \$Dir$j   ------ $d
+	echo "------------------------"
+	echo  "Current folder : Dir$j = $d"
 
 	if [ -f "$d/image1.jpg" ]; then
 	
@@ -181,14 +186,14 @@ do
 
 			cp "$d/image1.jpg" $progdir
 			
-			# if image2.jpg and image3.jpg are not here we get it from the "Original" folder
+			# if image2.jpg and image3.jpg are not here we get it from the "_Original" folder
 			if [ -f "$d/image2.jpg" ]; then
 				cp "$d/image2.jpg" $progdir
 			else
 				./bin/blank
 				./bin/say "Importing default stock image"$'\n'"for \"System Upgrade\" screen."
 				sleep 1.5
-				cp "./logos/Original/image2.jpg" $progdir
+				cp "./logos/_Original/image2.jpg" $progdir
 			fi
 
 			if [ -f "$d/image3.jpg" ]; then
@@ -197,7 +202,7 @@ do
 				./bin/blank
 				./bin/say "Importing default stock image"$'\n'"for \"Super Upgrade\" screen."
 				sleep 1.5
-				cp "./logos/Original/image3.jpg" $progdir
+				cp "./logos/_Original/image3.jpg" $progdir
 			fi
 			
 			# We check if each file is really a jpg file. (and not png files renamed).
