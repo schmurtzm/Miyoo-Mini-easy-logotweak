@@ -86,6 +86,11 @@ ui_menu_size 20
 ui_text_font "/mnt/SDCARD/miyoo/app/wqy-microhei.ttc"
 ui_text_size 34
 ui_name yes
+sort parent
+preview snap
+menu_base 0
+menu_rel 0
+difficulty none
 
 # Special commands
 ui_command "Force Thumbnails refresh" cd ..; ./thumbnails_generator.sh 1; ./bin/say "Please restart Easy LogoTweak"; sleep 3; pkill -9 advmenu; 
@@ -95,5 +100,10 @@ emulator_roms "EasyLogoTweak" "/mnt/SDCARD/App/EasyLogoTweak/thumbnails"
 emulator_roms_filter "EasyLogoTweak" "*.png:*.pcx"
 emulator_altss "EasyLogoTweak"  "/mnt/SDCARD/App/EasyLogoTweak/thumbnails"
 emulator_flyers "EasyLogoTweak"  "/mnt/SDCARD/App/EasyLogoTweak/thumbnails"
+easylogotweak/mode tile_small
 easylogotweak/sort name
-
+emulator_include "EasyLogoTweak"
+group "<undefined>"
+type "<undefined>"
+emulator_attrib "EasyLogoTweak" missing exclude
+emulator_attrib "EasyLogoTweak" duplicate include
