@@ -1,13 +1,13 @@
 @echo off
 setlocal enableextensions enabledelayedexpansion
 
-@FOR /F "tokens=1,2,3* delims=:, " %%i in ('echo %time%') do @set Mytime=%%ih%%jm%%ks
-@set Mytime=%date:~-4,4%-%date:~-7,2%-%date:~-10,2%_%Mytime%
-@echo %Mytime%
+FOR /F "tokens=1,2,3* delims=:, " %%i in ('echo %time%') do @set Mytime=%%ih%%jm%%ks
+set Mytime=%date:~-4,4%-%date:~-7,2%-%date:~-10,2%_%Mytime%
+echo %Mytime%
 set /a count = 0
 copy /y NUL list.txt >NUL
 
-for /f "delims=" %%A in ('dir /b /s /a:-D ..\..\SD_CARD\App\logotweak\logos\image1.jpg') do @(
+for /f "delims=" %%A in ('dir /b /s /a:-D ..\..\SD_CARD\App\EasyLogoTweak\logos\image1.jpg') do @(
 
 echo "%%A">>list.txt
   set /a count += 1
