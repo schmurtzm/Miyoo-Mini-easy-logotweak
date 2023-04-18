@@ -127,6 +127,11 @@ Another excellent tutorial video about Easy LogoTweak made by RetroBreeze (disab
 /*    - Better jpg error messages when an image is not valid                                */
 /*    - Default flash logos (image2.jpg and image3.jpg) are now more compressed             */
 /*    - Fixes for complex paths                                                             */
+/*  v3.0 - 2023/04/18 :                                                                     */
+/*    - New browsing menu based on AdvanceMenu                                              */
+/*    - Thumbnails auto-generation thanks to ImageMagick                                    */
+/*    - 94 new boot logos !                                                                 */
+/*    - Music : The World Of Douve by DOUVE                                                 */
 ```
 
  ## Detailed documentation

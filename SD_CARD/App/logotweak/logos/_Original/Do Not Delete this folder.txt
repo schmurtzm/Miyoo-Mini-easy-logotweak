@@ -1,2 +1,0 @@
-Do not delete this folder !
-This folder is used when image2.jpg and image3.jpg are absent !

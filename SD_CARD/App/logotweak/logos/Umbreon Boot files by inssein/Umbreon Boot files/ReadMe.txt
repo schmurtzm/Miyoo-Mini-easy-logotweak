@@ -1,1 +1,0 @@
-Before doing anything, make a backup of your existing .tmp_update folder so you have the default boot and shutdown images. To view the .tmp_update folder on MacOS or Linux, you need to enable Show Hidden  Files (Linux) or Show Invisible Files (MacOS). Then copy the folder to your microSD card.
