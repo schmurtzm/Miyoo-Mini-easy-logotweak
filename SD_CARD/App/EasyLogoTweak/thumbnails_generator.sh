@@ -12,8 +12,8 @@ else
 fi
 
 
-# Removing obsolete thumbnails
-for file in ./thumbnails/*.png
+# Removing obsolete thumbnails and mac metadata files
+for file in ./thumbnails/.[!.]*.png ./thumbnails/*.png
 do
     filename=$(basename "$file" .png)
     if [ ! -d "./logos/$filename" ] ; then

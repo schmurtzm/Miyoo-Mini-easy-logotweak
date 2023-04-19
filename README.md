@@ -30,7 +30,7 @@ The community has made some excellent tutorial videos, I invite you to have a lo
 ------------------------------------------------
 ## Download
 
-[Click here for direct download](https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2Fschmurtzm%2FMiyoo-Mini-easy-logotweak%2Ftree%2Fv3.x%2FSD_CARD%2FApp)
+[Click here for direct download](https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2Fschmurtzm%2FMiyoo-Mini-easy-logotweak%2Ftree%2Fmain%2FSD_CARD%2FApp)
 
 
 Or use the "normal" way to download sources on Github :
@@ -84,7 +84,7 @@ Another excellent tutorial video about Easy LogoTweak made by RetroBreeze (disab
 
  ## Community logos's included :
 
-<img src="https://raw.githubusercontent.com/schmurtzm/Miyoo-Mini-easy-logotweak/v3.x/tools/Global Preview Generator/Preview.webp" width="300">
+<img src="https://raw.githubusercontent.com/schmurtzm/Miyoo-Mini-easy-logotweak/main/tools/Global Preview Generator/Preview.webp" width="300">
 
 
 
@@ -132,6 +132,11 @@ Another excellent tutorial video about Easy LogoTweak made by RetroBreeze (disab
 /*    - Thumbnails auto-generation thanks to ImageMagick                                    */
 /*    - 94 new boot logos !                                                                 */
 /*    - Music : The World Of Douve by DOUVE                                                 */
+/*  v3.0.1 - 2023/04/19 :                                                                   */
+/*    - Automatically suppress mac metadata files                                           */
+/*    - Display the logo in fullscreen before flashing                                      */
+/*    - Go back to Advance Menu when cancelling the flash                                   */
+/*    - New logos added & removing duplicates                                               */
 ```
 
  ## Detailed documentation
