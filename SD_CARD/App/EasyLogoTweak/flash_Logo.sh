@@ -15,7 +15,6 @@ fi
 filename=$(basename -- "$1")
 foldername="${filename%.*}"
 echo "===================== displaying : ./logos/$foldername/image1.jpg"
-./bin/blank
 ./bin/jpgr "./logos/$foldername/image1.jpg"   # == Displays a rotated preview of the jpeg file
 
 
