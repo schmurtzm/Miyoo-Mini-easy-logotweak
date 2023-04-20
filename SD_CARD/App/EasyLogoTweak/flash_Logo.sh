@@ -4,12 +4,6 @@ echo "=====================  $0   $1"
 
 cd ..
 
-#  specific path force to use stock SDL or not , depending using Onion or MiniUI :
-if [ -f "/mnt/SDCARD/.tmp_update/onionVersion/version.txt" ]; then
-	LD_LIBRARY_PATH=./bin:$LD_LIBRARY_PATH
-else
-	LD_LIBRARY_PATH=./bin:/customer/lib:/config/lib:/lib
-fi
 
 
 filename=$(basename -- "$1")

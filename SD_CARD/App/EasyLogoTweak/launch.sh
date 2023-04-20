@@ -1,11 +1,29 @@
 #!/bin/sh
+echo ----
 echo $0 $*
 progdir=`dirname "$0"`
 homedir=$progdir/advmenu
+echo progdir : $progdir
+echo homedir : $homedir
+echo ----
+
+cd "$progdir"
+
+
+
+if [ -f "/mnt/SDCARD/.tmp_update/onionVersion/version.txt" ]; then
+	infoPanel -t "Easy LogoTweak" -m "LOADING...\n \nEasy LogoTweak by Schmurtz\nMusic : The World Of Douve by DOUVE" --persistent &
+	LD_LIBRARY_PATH="./libs:$LD_LIBRARY_PATH"
+else
+	LD_LIBRARY_PATH="./libs:./bin:/customer/lib:/config/lib:/lib"
+	say "Loading..."
+fi
+
+# each folder will use its own library folder (infoPanel & jpgr doesn't use the same libSDL_image-1.2.so.0) :
+
 
 echo performance > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
 
-infoPanel -t "Easy LogoTweak" -m "LOADING...\n \nEasy LogoTweak by Schmurtz\nMusic : The World Of Douve by DOUVE" --persistent &
 
 # running thumbnails_generator for AdvanceMenu
 ./thumbnails_generator.sh
@@ -18,7 +36,9 @@ cd $homedir
 
 # put backlight to max brightness (as during boot)
 echo 255 > /sys/class/pwm/pwmchip0/pwm0/duty_cycle
-HOME=/mnt/SDCARD/App/EasyLogoTweak/advmenu ./advmenu
+
+
+HOME=. ./advmenu
 
 /customer/app/sysmon freemma
 

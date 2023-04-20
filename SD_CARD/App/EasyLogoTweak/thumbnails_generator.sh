@@ -1,7 +1,6 @@
 #!/bin/sh
-sysdir=/mnt/SDCARD/.tmp_update
-miyoodir=/mnt/SDCARD/miyoo
-export LD_LIBRARY_PATH="./imagemagick/libs:/lib:/config/lib:$miyoodir/lib:$sysdir/lib:$sysdir/lib/parasyte"
+LD_LIBRARY_PATH="./imagemagick/libs:$LD_LIBRARY_PATH"
+
 
 echo performance > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
 

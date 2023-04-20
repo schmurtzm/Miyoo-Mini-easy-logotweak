@@ -96,10 +96,10 @@ difficulty none
 ui_command "Force Thumbnails refresh" cd ..; ./thumbnails_generator.sh 1; ./bin/say "Please restart Easy LogoTweak"; sleep 3; pkill -9 advmenu; 
 
 emulator "EasyLogoTweak" generic "../flash_Logo.sh" "%p"
-emulator_roms "EasyLogoTweak" "/mnt/SDCARD/App/EasyLogoTweak/thumbnails"
+emulator_roms "EasyLogoTweak" "./thumbnails/"
 emulator_roms_filter "EasyLogoTweak" "*.png:*.pcx"
-emulator_altss "EasyLogoTweak"  "/mnt/SDCARD/App/EasyLogoTweak/thumbnails"
-emulator_flyers "EasyLogoTweak"  "/mnt/SDCARD/App/EasyLogoTweak/thumbnails"
+emulator_altss "EasyLogoTweak"  "./thumbnails/"
+emulator_flyers "EasyLogoTweak"  "./thumbnails/"
 easylogotweak/mode tile_small
 easylogotweak/sort name
 emulator_include "EasyLogoTweak"

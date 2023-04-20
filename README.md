@@ -137,6 +137,8 @@ Another excellent tutorial video about Easy LogoTweak made by RetroBreeze (disab
 /*    - Display the logo in fullscreen before flashing                                      */
 /*    - Go back to Advance Menu when cancelling the flash                                   */
 /*    - New logos added & removing duplicates                                               */
+/*  v3.0.2 - 2023/04/20 :                                                                   */
+/*    - Now compatible with DotUI                                                           */
 ```
 
  ## Detailed documentation

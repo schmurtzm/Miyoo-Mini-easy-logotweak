@@ -1,6 +1,8 @@
 logotweak app by Schmurtz
 *************************
 
+https://github.com/schmurtzm/Miyoo-Mini-easy-logotweak
+
 !! **                                    Use it at your own risk :                                    ** !!
 !! ** logotweak write in the nand of the Miyoo Mini. A bad flash will cause your miyoo Mini to brick. ** !!
 !! **      Check your battery level (don't use it with low battery level) and use a good SD card.     ** !!
