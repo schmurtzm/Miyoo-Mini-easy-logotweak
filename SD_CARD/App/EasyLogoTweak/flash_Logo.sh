@@ -17,7 +17,7 @@ echo "===================== displaying : ./logos/$foldername/image1.jpg"
 MIYOO_VERSION=`/etc/fw_printenv miyoo_version`
 MIYOO_VERSION=${MIYOO_VERSION#miyoo_version=}
 echo "Current firmware version : $MIYOO_VERSION"
-SUPPORTED_VERSION="202303262339" # last known firmware for the Mini+
+SUPPORTED_VERSION="202303310000"
 if [ $MIYOO_VERSION -gt $SUPPORTED_VERSION ]; then
 	./bin/blank
 	./bin/say "Firmware not supported."$'\n Versions further 20230326\nare not supported for now.\n\nPress a key to return to app menu.'
