@@ -118,7 +118,7 @@ if [ -f "./logos/$foldername/image1.jpg" ]; then
     		./bin/logomake
     		
     		# Patch screen offset for the Mini+
-    		if [ "$MIYOO_VERSION" -eq "202303262339" ]; then
+    		if [ "$MIYOO_VERSION" -ge "202303262339" ]; then
     			HexEdit "./logo.img" 1086 2C
     			HexEdit "./logo.img" 1088 4C
     		fi
