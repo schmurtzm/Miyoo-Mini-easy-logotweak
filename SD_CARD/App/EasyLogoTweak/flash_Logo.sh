@@ -40,14 +40,15 @@ checkjpg() {
 	Filename=`basename "$JpgFilePath"`
 	echo
 	./bin/checkjpg "$JpgFilePath"
-	if [ $? -eq 0 ]; then
+	CHECK_JPG=$?
+	if [ $CHECK_JPG -eq 0 ]; then
 		echo "$Filename is a valid VGA JPG file"
-	elif [ $? -eq 1 ]; then
+	elif [ $CHECK_JPG -eq 1 ]; then
 		./bin/blank
 		./bin/say "$Filename is not a valid jpg file !"$'\n\n(Try to open it with your favorite image\neditor and \"save as\" -> jpg again)\n\nExiting without flash !'
 		./bin/confirm any
 		exit 0
-	elif [ $? -eq 2 ]; then
+	elif [ $CHECK_JPG -eq 2 ]; then
 		./bin/blank
 		./bin/say "$Filename "$'doesn\'t have \nthe right resolution !\n\nIt should be 640x480 (VGA)\n\nExiting without flash !'
 		./bin/confirm any

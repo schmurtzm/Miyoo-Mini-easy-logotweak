@@ -139,6 +139,10 @@ Another excellent tutorial video about Easy LogoTweak made by RetroBreeze (disab
 /*    - New logos added & removing duplicates                                               */
 /*  v3.0.2 - 2023/04/20 :                                                                   */
 /*    - Now compatible with DotUI                                                           */
+/*  v3.0.3 - 2023/04/30 :                                                                   */
+/*    - support for Mini+ firmware 0328 and 0329                                            */
+/*    - Custom error message when jpg resolution is bad                                     */
+/*    - add and fix some logos                                                              */
 ```
 
  ## Detailed documentation
