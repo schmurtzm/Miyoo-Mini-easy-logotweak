@@ -30,21 +30,14 @@ The community has made some excellent tutorial videos, I invite you to have a lo
 ------------------------------------------------
 ## Download
 
-[Click here for direct download](https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2Fschmurtzm%2FMiyoo-Mini-easy-logotweak%2Ftree%2Fmain%2FSD_CARD%2FApp)
-
-
-Or use the "normal" way to download sources on Github :
-
-<img src="https://user-images.githubusercontent.com/7110113/177954376-4b36be7a-eb07-4cca-8fa6-7866e5bdece1.png" width="300" height="200">
-
-More details in the video about Easy LogoTweak made by Retro Game Corps : https://youtu.be/fMhtj9VQRSk?t=111
+[Click here to get the last version released](https://github.com/schmurtzm/test-temp/releases/)
 
 ------------------------------------------------
 ## Installation
 
  #### To use with Onion-OS
 ```
-	1 - Open the downloaded archive and extract "logotweak" folder in your "App" folder.
+	1 - Open the downloaded archive and extract the content of the archive at the root of your SD card.
 	2 - Run the app logotweak, and choose your logo. That' all : power off -> power on to see the result ;)
 ```
  #### To use with MiniUI
@@ -68,7 +61,7 @@ More technical details about logo creation in the detailed documentation below.
 
 An excellent tutorial video about Easy LogoTweak  made by Retro Game Corps (click on the picture to view it) :
 
-(great instructions about how to download from github, the problem on MiniUI mentioned in this video has been solved in version 1.3)
+(great instructions about how to download from github (deprecated since 3.0.4), the problem on MiniUI mentioned in this video has been solved in version 1.3)
 
 [![An excellent tutorial video made by Retro Game Corps](https://img.youtube.com/vi/fMhtj9VQRSk/0.jpg)](https://youtu.be/fMhtj9VQRSk])
 
@@ -260,6 +253,7 @@ Do not hesitate, **Participate**, there are many ways :
 - Or you can buy me a coffee to keep me awake during night coding sessions :dizzy_face: !
    <a href="https://www.buymeacoffee.com/schmurtz"><img src="https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-2.svg" alt="Buy me a coffee" width="100"/></a>
 <br/><br/>
+
 Your contributions make a huge difference in keeping these projects alive !
 
 

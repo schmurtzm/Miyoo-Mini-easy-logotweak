@@ -1,0 +1,42 @@
+name: Create Easy Logotweak Release
+
+permissions:
+  id-token: "write"
+  contents: "write"
+  packages: "write"
+  pull-requests: "read"
+
+on:
+  push:
+    tags:
+      - v*
+
+
+jobs:
+  tagged-release:
+    name: Tagged release
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Get version
+        run: |
+          TAG="${{ github.ref_name }}"
+          echo "BUILD_VERSION=${TAG#v}" >> $GITHUB_ENV
+      - name: Install 7-Zip
+        run: sudo apt-get update && sudo apt-get install p7zip-full
+      - name: Compress SD_CARD contents
+        run: |
+          7z a ../Easy-LogoTweak_v${{ env.BUILD_VERSION }}.zip . && cd ..
+        working-directory: ./SD_CARD
+
+      - name: Create Release
+        uses: marvinpinto/action-automatic-releases@latest
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          title: "Easy Logotweak v${{ env.BUILD_VERSION }}"
+          prerelease: false
+          files: ./*.zip
+          draft: false
+          # automatic_release_tag: latest
+
