@@ -6,9 +6,9 @@
 !! ** logotweak write in the nand of the Miyoo Mini. A bad flash will cause your miyoo Mini to brick.  ** !!
 !! **      Check your battery level (don't use it with low battery level) and use a good SD card.      ** !!
 ```
-Easy Logotweak uses the flash app "Boot logo changer" created by Eggs and described in [the Wiki of Onion](https://github.com/OnionUI/Onion/wiki/Third-Party-Apps#easy-logotweak).
+Easy Logotweak uses the flash binaries "Boot logo changer" created by Eggs.
 
-Easy Logotweak is a based on a linux shell script which allows to choose a logo and to flash it in an easy way.
+Easy Logotweak is a based on Advance Menu coupled with a linux shell script which allows to choose a logo and to flash it in an easy way.
 It is presented as an app in Miyoo Mini menu.
 
 The community has made some excellent tutorial videos, I invite you to have a look at them, they are presented below.
@@ -16,16 +16,16 @@ The community has made some excellent tutorial videos, I invite you to have a lo
 
 ------------------------------------------------
 **Contents:**
-* [Download](#Download)
-* [Installation](#Installation)
-	* [Onion-OS](#To-use-with-Onion-OS)
-	* [MiniUI](#To-use-with-MiniUI)
-* [Videos tutorials](#Videos-tutorials)
-* [Community logos's included](#Community-logos-s-included)
-* [Add your own logo in the collection](#Add-your-own-logo-in-the-collection)
-* [Release Notes](#Release-Notes)
-* [Detailed documentation](#Detailed-documentation)
-* [Thanks](#Thanks)
+* [Download](#download)
+* [Installation](#installation)
+	* [Onion-OS](#to-use-with-onion-os)
+	* [MiniUI](#to-use-with-miniui)
+* [Add your own logo in the collection](#add-your-own-logo-in-the-collection)
+* [Videos tutorials](#videos-tutorials)
+* [Community logos's included](#community-logoss-included-)
+* [Release Notes](#release-notes)
+* [Detailed documentation](#detailed-documentation)
+* [Thanks](#thanks)
 
 ------------------------------------------------
 ## Download
@@ -53,7 +53,6 @@ More details in the video about Easy LogoTweak made by Retro Game Corps : https:
 	2 - Rename the folder "logotweak" to "logotweak.pak"
 	3 - Run the app logotweak, and choose your logo, that' all : power off -> power on to see the result ;)
 ```
-~~After that you will find a backup called backup_xxxxxxxx which contains a backup of your previous logo.~~ (disabled: it was not useful)
 
 ## Add your own logo in the collection
 ```
@@ -73,12 +72,6 @@ An excellent tutorial video about Easy LogoTweak  made by Retro Game Corps (clic
 
 [![An excellent tutorial video made by Retro Game Corps](https://img.youtube.com/vi/fMhtj9VQRSk/0.jpg)](https://youtu.be/fMhtj9VQRSk])
 
-
-------------------------------------------------
-
-Another excellent tutorial video about Easy LogoTweak made by RetroBreeze (disabled) :
-
-[![An excellent tutorial video made by RetroBreeze](https://img.youtube.com/vi/_GWbgp1Nw3s/0.jpg)](https://youtu.be/_GWbgp1Nw3s])
 
 ------------------------------------------------
 
@@ -143,6 +136,9 @@ Another excellent tutorial video about Easy LogoTweak made by RetroBreeze (disab
 /*    - support for Mini+ firmware 0328 and 0329                                            */
 /*    - Custom error message when jpg resolution is bad                                     */
 /*    - add and fix some logos                                                              */
+/*  v3.0.4 - 2023/08/15 :                                                                   */
+/*    - support for Mini firmware 20230611                                                  */
+/*    - support for Mini+ firmware 20230628                                                 */
 ```
 
  ## Detailed documentation
@@ -185,7 +181,7 @@ It can be usefull to understand all the steps of a custom boot logo flash.
 <details>
   <summary>Click here to expand </summary>
 
-
+```
 https://www.reddit.com/r/MiyooMini/comments/v6e1f1/custom_boot_screen_tutorial/
 
 1.Download the Boot Image Changer (https://github.com/jimgraygit/Onion/wiki/6.-Miyoo-mini-apps#boot-logo-changer-credit-eggs)
@@ -243,6 +239,8 @@ https://www.reddit.com/r/MiyooMini/comments/v6e1f1/custom_boot_screen_tutorial/
 
 26.You have now flashed the new boot, upgrade, and super upgrade images to your device.
 
+```
+
 </details>
 
 
@@ -257,10 +255,12 @@ You like this project ? You want to improve this project ?
 Do not hesitate, **Participate**, there are many ways :
 - If you don't know bash language you can test releases , and post some issues, some tips and tricks for daily use.
 - If you're a coder or a graphist you can fork, edit and publish your modifications with Pull Request on github :)<br/>
-- I now have a [![Participate to my Patreon][Patreon-shield]][patreon], feel free to support me if you like Easy LogoTweak and other projects of my "universe" !
- ([patreon.com/schmurtz](https://www.patreon.com/schmurtz))
-- Or you can buy me a coffee to keep me awake during night coding sessions :dizzy_face: !<br/><br/>
-[![Buy me a coffee][buymeacoffee-shield]][buymeacoffee]
+- Join my Patreon community and be a part of supporting the development of my various projects!  [![Participate to my Patreon][Patreon-shield]][patreon]
+  
+- Or you can buy me a coffee to keep me awake during night coding sessions :dizzy_face: !
+   <a href="https://www.buymeacoffee.com/schmurtz"><img src="https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-2.svg" alt="Buy me a coffee" width="100"/></a>
+<br/><br/>
+Your contributions make a huge difference in keeping these projects alive !
 
 
 <br/><br/>

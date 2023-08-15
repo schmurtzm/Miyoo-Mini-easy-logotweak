@@ -1,10 +1,7 @@
 #!/bin/sh
 
 echo "=====================  $0   $1" 
-
 cd ..
-
-
 
 filename=$(basename -- "$1")
 foldername="${filename%.*}"
@@ -12,12 +9,21 @@ echo "===================== displaying : ./logos/$foldername/image1.jpg"
 ./bin/jpgr "./logos/$foldername/image1.jpg"   # == Displays a rotated preview of the jpeg file
 
 
-
 # Check firmware version
 MIYOO_VERSION=`/etc/fw_printenv miyoo_version`
 MIYOO_VERSION=${MIYOO_VERSION#miyoo_version=}
 echo "Current firmware version : $MIYOO_VERSION"
-SUPPORTED_VERSION="202306092122"
+
+if [ -f "/customer/app/axp_test" ]; then  # differenciate MM and MMP supported firmware
+	MODEL="MMP"
+	SUPPORTED_VERSION="202306282128"
+else
+	MODEL="MM"
+	SUPPORTED_VERSION="202306111426"
+fi
+
+
+
 if [ $MIYOO_VERSION -gt $SUPPORTED_VERSION ]; then
 	./bin/blank
 	./bin/say "Firmware not supported."$'\n Versions further 20230326\nare not supported for now.\n\nPress a key to return to app menu.'
@@ -119,7 +125,7 @@ if [ -f "./logos/$foldername/image1.jpg" ]; then
     		./bin/logomake
     		
     		# Patch screen offset for the Mini+
-    		if [ "$MIYOO_VERSION" -ge "202303262339" ]; then
+    		if [ "$MODEL" = "MMP" ]; then
     			HexEdit "./logo.img" 1086 2C
     			HexEdit "./logo.img" 1088 4C
     		fi
@@ -145,32 +151,47 @@ if [ -f "./logos/$foldername/image1.jpg" ]; then
     			# mv ./image3.jpg ./$BackupFolder
     			# sleep 1
 				
-				# Check for SPI write capability (for Mini with BoyaMicro chips)
-				CHECK_WRITE=`./bin/checkwrite`
-				CHECK_WRITE=$?
+
 				
-    			if [ $CHECK_WRITE -eq 0 ]; then
-    				./bin/blank
-    				./bin/say "Flashing..."
-    				./bin/logowrite
-    				sleep 1.5
-    				./bin/blank
-    				./bin/say "Flash Done."$'\n Reboot to see changes.\n\nPress a key to return to app menu.'
-    				./bin/confirm any
-    				exit 0
-    			fi
+				if [ "$MODEL" = "MMP" ]; then
+						./bin/blank
+						./bin/say "Flashing..."
+						./bin/logowrite
+						sleep 1.5
+						./bin/blank
+						./bin/say "Flash Done."$'\n Reboot to see changes.\n\nPress a key to return to app menu.'
+						./bin/confirm any
+						exit 0
+				else
+					# Check for SPI write capability (for Mini with BoyaMicro chips)
+					CHECK_WRITE=`./bin/checkwrite`
+					CHECK_WRITE=$?
+					
+					if [ $CHECK_WRITE -eq 0 ]; then
+						./bin/blank
+						./bin/say "Flashing..."
+						./bin/logowrite
+						sleep 1.5
+						./bin/blank
+						./bin/say "Flash Done."$'\n Reboot to see changes.\n\nPress a key to return to app menu.'
+						./bin/confirm any
+						exit 0
+					fi
+					
+					if [ $CHECK_WRITE -eq 1 ]; then
+						./bin/blank
+						./bin/say "Creating logo fw file..."
+						./bin/logoimgmake
+						mv ./miyoo283_fw.img /mnt/SDCARD/miyoo283_fw.img
+						sleep 1.5
+						./bin/blank
+						./bin/say "IMG file created."$'\n Power off, hold MENU\nand plug into USB charger\nTurn off when charging\nanimation is shown.'
+						./bin/confirm any
+						exit 0
+					fi
+				fi
 				
-    			if [ $CHECK_WRITE -eq 1 ]; then
-    				./bin/blank
-    				./bin/say "Creating logo fw file..."
-    				./bin/logoimgmake
-    				mv ./miyoo283_fw.img /mnt/SDCARD/miyoo283_fw.img
-    				sleep 1.5
-    				./bin/blank
-    				./bin/say "IMG file created."$'\n Power off, hold MENU\nand plug into USB charger\nTurn off when charging\nanimation is shown.'
-    				./bin/confirm any
-    				exit 0
-    			fi
+
     		else
     			./bin/blank
     			./bin/say "logo.img doesn t have the right size"$'\n'"Exiting without flash !"
