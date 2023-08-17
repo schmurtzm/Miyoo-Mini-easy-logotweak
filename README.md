@@ -30,7 +30,7 @@ The community has made some excellent tutorial videos, I invite you to have a lo
 ------------------------------------------------
 ## Download
 
-[Click here to get the last version released](https://github.com/schmurtzm/test-temp/releases/)
+[Click here to get the last version released](https://github.com/schmurtzm/Miyoo-Mini-easy-logotweak/releases)
 
 ------------------------------------------------
 ## Installation
