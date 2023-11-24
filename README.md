@@ -132,6 +132,8 @@ An excellent tutorial video about Easy LogoTweak  made by Retro Game Corps (clic
 /*  v3.0.4 - 2023/08/15 :                                                                   */
 /*    - support for Mini firmware 20230611                                                  */
 /*    - support for Mini+ firmware 20230628                                                 */
+/*  v3.0.5 - 2023/11/24 :                                                                   */
+/*    - support for Mini v4 firmware 20231027                                               */
 ```
 
  ## Detailed documentation

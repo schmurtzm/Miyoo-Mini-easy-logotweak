@@ -19,7 +19,7 @@ if [ -f "/customer/app/axp_test" ]; then  # differenciate MM and MMP supported f
 	SUPPORTED_VERSION="202306282128"
 else
 	MODEL="MM"
-	SUPPORTED_VERSION="202306111426"
+	SUPPORTED_VERSION="202310271401"
 fi
 
 
