@@ -26,7 +26,7 @@ fi
 
 if [ $MIYOO_VERSION -gt $SUPPORTED_VERSION ]; then
 	./bin/blank
-	./bin/say "Firmware not supported."$'\n Versions further 20230326\nare not supported for now.\n\nPress a key to return to app menu.'
+	./bin/say "Firmware not supported."$'\n Versions further $SUPPORTED_VERSION\nare not supported for now.\n\nPress a key to return to app menu.'
 	./bin/confirm any
 	exit 0
 fi
