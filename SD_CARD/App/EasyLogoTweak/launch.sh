@@ -9,10 +9,12 @@ echo ----
 
 cd "$progdir"
 
-
+# music text output for infopanel from mp3 file
+music=$(find -wholename "$homedir/*.mp3"); music=${music##*/}
+if [ "$music" != "" ]; then music="Music :  ${music%.*}"; fi
 
 if [ -f "/mnt/SDCARD/.tmp_update/onionVersion/version.txt" ]; then
-	infoPanel -t "Easy LogoTweak" -m "LOADING...\n \nEasy LogoTweak by Schmurtz\nMusic : The World Of Douve by DOUVE" --persistent &
+	infoPanel -t "Easy LogoTweak" -m "LOADING...\n \nEasy LogoTweak by Schmurtz\n$music" --persistent &
 	LD_LIBRARY_PATH="./libs:$LD_LIBRARY_PATH"
 else
 	LD_LIBRARY_PATH="./libs:./bin:/customer/lib:/config/lib:/lib"
